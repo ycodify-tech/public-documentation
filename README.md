@@ -3,7 +3,7 @@
 Aqui você encontrará um sumário da documentação da plataforma Ycodify. A seguir, um Sumário dos documentos, suas referências, e suas finalidades.
 
 ### 1. Quickstart - Criação de Conta e Criação de _Schema_ de Dados com Console CLI
-> Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso script _[yc.sh](https://github.com/ycodify-tech/cli-scripts/blob/master/yc.sh)_ para linhas de comando bashscript. Usando-o, você será capaz de criar uma conta em nosso sandbox e criar seu primeiro _schema_ de dados. 
+> Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso script [yc.sh](https://github.com/ycodify-tech/cli-scripts/blob/master/yc.sh) para linhas de comando bashscript. Usando-o, você será capaz de criar uma conta em nosso sandbox e criar seu primeiro _schema_ de dados. 
 
 ### 2. Quickstart - Consumindo Serviços de Backend para um _Schema_ de Dados
 > Com esse documeto você saberá como consumir os serviços de backend para um _schema_ de dados, criado e mantido por meio do que está apresentado em _1. Quickstart - Criação de Conta e Criação de _Schema_ de Dados_
