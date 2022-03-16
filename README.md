@@ -1,4 +1,4 @@
-# (Sumário) Documentação
+# Sumário da Documentação da Plataforma Ycodify
 
 Aqui você encontrará um sumário da documentação da plataforma Ycodify. A seguir, um Sumário dos documentos, suas referências, e suas finalidades.
 
