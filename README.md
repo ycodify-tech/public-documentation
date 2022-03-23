@@ -14,9 +14,6 @@ Aqui você encontrará um sumário da documentação da plataforma Ycodify. A se
 ### 4. [Quickstart - Uso da Linguagem YCL](https://github.com/ycodify-tech/languages/blob/master/Quickstart%20-%20YCL.md)
 > Esse documento apresenta a linguagem YCL e suas formas de uso. Esse uso implica a definição de _schemas_ de dados e configurações dos serviços de backend que operarão sobre o _schema_ de dados anteriormente definidos.
 
-### 5. Console WEB
-> Esse documeto apresenta, por meio de exemplos, todos os recursos do nosso [Console WEB](https://api.ycodify.com/app/index.html) que, por meio dele, você será capaz de criar uma conta, criar seu primeiro _schema_ de dados, manter e habilitar os serviços e suas configurações para _deployment_ de seu _schema_ de dados em nossa plataforma BaaS.
-
-### 6. Linguagem YCL
+### 5. Linguagem YCL
 > Esse documento apresenta mais detalhadamente a linguagem YCL. Use-o com o fim de compreender todo o potencial da linguagem YCL.
 
