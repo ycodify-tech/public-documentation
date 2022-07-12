@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -30,3 +31,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+=======
+*~
+>>>>>>> dc4a7f447d865dc1e418e5191392011dc1662067
