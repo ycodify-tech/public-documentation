@@ -13,7 +13,7 @@ Para começar com o serviço de persistência de aplicativos, antes será necess
 
 Para criar uma conta em seu aplicativo, veja abaixo como fazer.
 
-##### Request [by curl]
+#### Request [by curl]
 
 ```shell
 $ curl -i -X POST \
@@ -28,7 +28,7 @@ $ curl -i -X POST \
   }' http://api.Ycodify.com/api/caccount-mngr/account
 ```
 
-##### Retorno de Sucesso:
+#### Retorno de Sucesso:
 
 Esta operação, se **sucesso**, retornará HTTP Status 201, além do JSON a seguir:
 
@@ -45,7 +45,7 @@ Esta operação, se **sucesso**, retornará HTTP Status 201, além do JSON a seg
 }
 ```
 
-##### Retorno com Erro
+#### Retorno com Erro
 
 Se **erro**, a mensagem retornada será semelhante a:
 
@@ -113,13 +113,13 @@ Se **erro**, o retorno será HTTP Status 400, com essa mensagem:
 
 Agora que você tem um **token** (o `access_token` acima) que o identifica na plataforma, você pode usá-lo para solicitar serviços e informações da plataforma. _Claro_, informações que dizem respeito ao seu espaço de trabalho, suas aplicações. Por exemplo, você pode consultar os dados do perfil da sua conta com:
 
-##### Request [by curl]
+#### Request [by curl]
 
 ```shell
 $ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" http://api.Ycodify.com/api/caccount-mngr/account/username/tony
 ```
 
-##### Request [by curl]
+#### Request [by curl]
 
 ```shell
 $ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" http://api.Ycodify.com/api/caccount-mngr/account
@@ -131,7 +131,7 @@ $ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_t
 
 A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 
-##### _caso você deseje todas as contas de sea aplicação_
+#### _caso você deseje todas as contas de sea aplicação_
 
 ```javascript
 ;[
@@ -148,7 +148,7 @@ A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 ]
 ```
 
-##### _caso você deseje dados de uma única conta_
+#### _caso você deseje dados de uma única conta_
 
 ```javascript
 {
@@ -182,7 +182,7 @@ Se **erro**, a mensagem de retorno terá o HTTP Status 404, com o corpo conforme
 
 Usando o `access_token` você poderá atuazliar sua conta:
 
-##### _Request [by curl]_
+#### _Request [by curl]_
 
 ```shell
 $ curl -i -X PUT \
@@ -240,7 +240,58 @@ Aqui você encontrará informações sobre como consumir nossos serviços de bac
 
 &nbsp;
 
-### 2.1. Crie e persista um novo _Objeto_
+### 2.1.1. Crie um novo _Objeto_
+
+Agora que você tem uma conta e um esquema de dados definidos, para criar novos dados e mantê-los no banco de dados do seu aplicativo, você deve usar o seguinte endpoint da seguinte forma:
+
+**/project-name/{projectName}/schema/nosql-columnar/entity** => Create nosql columnar entity
+
+| Name          | Description                                                          | Type   | Field  |
+| ------------- | -------------------------------------------------------------------- | ------ | ------ |
+| Authorization | The Authorization header of the request. Value it with the JWT token | string | header |
+| UserIDToken   | UserIDToken                                                          | string | header |
+| body          |                                                                      |        | body   |
+| body<entity>  | The object that describes the entity to be created                   |        | ()     |
+| projectName   | The customer entity schema name                                      | string | path   |
+
+#### _Possíveis retornos_
+
+| Code | Description           |
+| ---- | --------------------- |
+| 200  | Ok                    |
+| 201  | Success               |
+| 400  | Bad Request           |
+| 401  | Unauthorized Access   |
+| 403  | Forbidden             |
+| 404  | Not Found             |
+| 417  | Expectation Failed    |
+| 500  | Internal Server Error |
+
+**Importante**: a classe de objeto definida possui mais atributos do que os criados. A plataforma Ycodify cria, para cada classe definida, outras seis definições de atributos. São eles:
+
+`id` => Informa um identificador único para este objeto em seu espaço de valores;
+
+`user` => Informa o nome de usuário que solicitou a operação de backend;
+
+`role` => Identifica a qual _role_ este usuário pertence;
+
+`createdat` => Indica a data em que esses dados foram persistidos pela primeira vez no banco de dados;
+
+`updatedat` => Informa a última operação de atualização desses dados na base;
+
+`version` => Pode ser usado para realizar o controle de concorrência caso a entidade que detém este atributo tenha
+sido configurada para realizar o controle de acesso concorrente (de acordo com o que foi configurado em
+
+```
+{ "_classDef": { "_concurrencyControl" : true } }
+```
+
+).
+Aqui, `version` é `null` porque `_concurrencyControl` para a classe `armor` é `false`.
+
+Todos esses seis atributos são controlados exclusivamente pela plataforma, o usuário não tem controle sobre seus valores.
+
+### 2.1.2. Crie e persista um novo _Objeto_
 
 Agora que você tem uma conta e um esquema de dados definidos, para criar novos dados e mantê-los no banco de dados do seu aplicativo, você deve usar o seguinte endpoint da seguinte forma:
 

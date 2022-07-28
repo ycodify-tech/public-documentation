@@ -68,7 +68,7 @@ Em caso de sucesso de autenticação, a mensagem que será exibida será a que i
 
 ## 6. Agora, ao que interessa ... à modelagem!
 
-> **Importante**: Considerar que as instruções que seguem concernem apenas a ambientes <font color=red>Linux</font>
+> **Importante**: Considerar que as instruções que seguem concernem apenas a ambientes <p style="color:red">Linux</p>
 
 &nbsp;
 

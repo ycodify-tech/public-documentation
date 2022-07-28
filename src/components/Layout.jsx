@@ -31,7 +31,72 @@ const navigation = [
         title: 'Uso da Linguagem YCL',
         href: '/docs/linguagem-ycl',
       },
+      {
+        title: 'Test Api',
+        href: '/docs/interpreter-api',
+      },
     ],
+  },
+  {
+    title: 'Getting started',
+    links: [
+      { title: 'Quickstart com Yc Web', href: '/' },
+      { title: 'Quickstart com Yc CLI', href: '/' },
+      { title: 'How it works', href: '/' },
+    ],
+  },
+  {
+    title: 'Schema',
+    links: [{ title: 'Schema', href: '/' }],
+  },
+  {
+    title: 'Operations',
+    links: [
+      { title: 'Select', href: '/' },
+      { title: 'Insert', href: '/' },
+      { title: 'Update', href: '/' },
+      { title: 'Delete', href: '/' },
+    ],
+  },
+  {
+    title: 'Authentication & Authorization',
+    links: [{ title: 'Authentication & Authorization', href: '/' }],
+  },
+  {
+    title: 'Security',
+    links: [{ title: 'Security', href: '/' }],
+  },
+  {
+    title: 'Ycodify CLI',
+    links: [{ title: 'Ycodify CLI', href: '/' }],
+  },
+  {
+    title: 'Project & Collaborators',
+    links: [{ title: 'Project & Collaborators', href: '/' }],
+  },
+  {
+    title: 'Account Management',
+    links: [{ title: 'Account Management', href: '/' }],
+  },
+  {
+    title: 'Guides / Tutorials / Resources',
+    links: [{ title: 'Guides / Tutorials / Resources', href: '/' }],
+  },
+  {
+    title: 'Ycodify Api Explorer',
+    links: [{ title: 'Ycodify Api Explorer', href: '/' }],
+  },
+  {
+    title: 'Troubleshooting',
+    links: [{ title: 'Troubleshooting', href: '/' }],
+  },
+  {
+    title: 'FAQs',
+    links: [{ title: 'FAQs', href: '/' }],
+  },
+  {
+    title: 'Glossary',
+    links: [{ title: 'Glossary', href: '/' }],
   },
 ]
 
@@ -165,15 +230,15 @@ export function Layout({ children, title, tableOfContents }) {
 
       {isHomePage && <Hero />}
 
-      <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="dark:dark-scrollbar"></div>
+
+      <div className="relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto py-16 pl-0.5">
-            <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-            <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
             <Navigation
               navigation={navigation}
-              className="w-64 pr-8 xl:w-72 xl:pr-16"
+              className="mr-6 w-64 max-w-[256px] xl:w-max"
             />
           </div>
         </div>
