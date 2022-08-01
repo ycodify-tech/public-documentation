@@ -11,94 +11,7 @@ import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
-const navigation = [
-  {
-    title: 'Introdução',
-    links: [{ title: 'Iniciando', href: '/' }],
-  },
-  {
-    title: 'Quickstart',
-    links: [
-      {
-        title: 'Criação de Conta e Criação de Schema de Dados com Console CLI',
-        href: '/docs/conta-schema',
-      },
-      {
-        title: 'Consumindo Serviços de Backend para um Schema de Dados',
-        href: '/docs/consumindo-servicos',
-      },
-      {
-        title: 'Uso da Linguagem YCL',
-        href: '/docs/linguagem-ycl',
-      },
-      {
-        title: 'Test Api',
-        href: '/docs/interpreter-api',
-      },
-    ],
-  },
-  {
-    title: 'Getting started',
-    links: [
-      { title: 'Quickstart com Yc Web', href: '/' },
-      { title: 'Quickstart com Yc CLI', href: '/' },
-      { title: 'How it works', href: '/' },
-    ],
-  },
-  {
-    title: 'Schema',
-    links: [{ title: 'Schema', href: '/' }],
-  },
-  {
-    title: 'Operations',
-    links: [
-      { title: 'Select', href: '/' },
-      { title: 'Insert', href: '/' },
-      { title: 'Update', href: '/' },
-      { title: 'Delete', href: '/' },
-    ],
-  },
-  {
-    title: 'Authentication & Authorization',
-    links: [{ title: 'Authentication & Authorization', href: '/' }],
-  },
-  {
-    title: 'Security',
-    links: [{ title: 'Security', href: '/' }],
-  },
-  {
-    title: 'Ycodify CLI',
-    links: [{ title: 'Ycodify CLI', href: '/' }],
-  },
-  {
-    title: 'Project & Collaborators',
-    links: [{ title: 'Project & Collaborators', href: '/' }],
-  },
-  {
-    title: 'Account Management',
-    links: [{ title: 'Account Management', href: '/' }],
-  },
-  {
-    title: 'Guides / Tutorials / Resources',
-    links: [{ title: 'Guides / Tutorials / Resources', href: '/' }],
-  },
-  {
-    title: 'Ycodify Api Explorer',
-    links: [{ title: 'Ycodify Api Explorer', href: '/' }],
-  },
-  {
-    title: 'Troubleshooting',
-    links: [{ title: 'Troubleshooting', href: '/' }],
-  },
-  {
-    title: 'FAQs',
-    links: [{ title: 'FAQs', href: '/' }],
-  },
-  {
-    title: 'Glossary',
-    links: [{ title: 'Glossary', href: '/' }],
-  },
-]
+import { NavigationStructure as navigation } from './NavigationStructure'
 
 function GitHubIcon(props) {
   return (
@@ -235,10 +148,10 @@ export function Layout({ children, title, tableOfContents }) {
       <div className="relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-          <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto py-16 pl-0.5">
+          <div className="sticky top-[4.5rem] h-[calc(100vh-4.5rem)] overflow-x-hidden overflow-y-scroll py-16">
             <Navigation
               navigation={navigation}
-              className="mr-6 w-64 max-w-[256px] xl:w-max"
+              className="mr-4 w-72 min-w-[272px] max-w-[272px] xl:w-max"
             />
           </div>
         </div>
@@ -293,8 +206,11 @@ export function Layout({ children, title, tableOfContents }) {
             )}
           </dl>
         </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
-          <nav aria-labelledby="on-this-page-title" className="w-56">
+        <div className="hidden overflow-x-hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+          <nav
+            aria-labelledby="on-this-page-title"
+            className="w-56 overflow-x-hidden overflow-y-scroll"
+          >
             {tableOfContents.length > 0 && (
               <>
                 <h2

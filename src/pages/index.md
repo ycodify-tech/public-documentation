@@ -6,13 +6,13 @@ description: Desenvolva software mais rápido. Concentre-se no que importa ao se
 
 Aqui você encontrará um sumário da documentação da plataforma Ycodify. A seguir, um Sumário dos documentos, suas referências, e suas finalidades.
 
-[Quickstart - Criação de Conta e Criação de _Schema_ de Dados com Console CLI](/docs/conta-schema)
+[Quickstart - Criação de Conta e Criação de _Schema_ de Dados com Console CLI](/docs/guides-tutorials-resources/conta-schema)
 
 > Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso script [yc.sh](https://github.com/ycodify-tech/scripts/blob/master/yc.sh) para linhas de comando bashscript. Usando-o, você será capaz de criar uma conta em nosso sandbox e criar seu primeiro _schema_ de dados.
 
 ---
 
-[Quickstart - Consumindo Serviços de Backend para um _Schema_ de Dados](/docs/consumindo-servicos)
+[Quickstart - Consumindo Serviços de Backend para um _Schema_ de Dados](/docs/guides-tutorials-resources/consumindo-servicos)
 
 > Com esse documeto você saberá como consumir os serviços de backend para um schema de dados, criado e mantido por meio do que está apresentado em 1. Quickstart - Criação de Conta e Criação de Schema de Dados.
 
@@ -24,7 +24,7 @@ Quickstart - Uso do Console WEB
 
 ---
 
-[Quickstart - Uso da Linguagem YCL](/docs/linguagem-ycl)
+[Quickstart - Uso da Linguagem YCL](/docs/guides-tutorials-resources/linguagem-ycl)
 
 > Esse documento apresenta a linguagem YCL e suas formas de uso. Esse uso implica a definição de _schemas_ de dados e configurações dos serviços de backend que operarão sobre o _schema_ de dados anteriormente definidos.
 

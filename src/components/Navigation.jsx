@@ -1,23 +1,32 @@
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-import { Accordion } from './Accordion'
 import Link from 'next/link'
+import { AccordionGroup } from './AccordionGroup'
 
 export function Navigation({ navigation, className }) {
   let router = useRouter()
 
+  const accordionsData = []
+
   return (
-    <nav className={clsx('text-base lg:text-sm', className)}>
-      <ul role="list" className="space-y-7">
-        {navigation.map((section) => (
-          <li key={section.title}>
-            <h2 className="font-display font-medium text-slate-900 dark:text-white">
-              <Accordion title={section.title}>
-                <ul
-                  role="list"
-                  className="mt-2 space-y-2 border-l-2 border-slate-100 dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200"
-                >
-                  {section.links.map((link) => (
+    <nav className={clsx('flex w-full text-base lg:text-sm', className)}>
+      <ul role="list" className="w-full">
+        {navigation.map((section, index) => {
+          let defaultOpen = false
+
+          accordionsData.push({
+            id: index,
+            title: section.title,
+            content: (
+              <ul
+                role="list"
+                className="space-y-2 border-l-2 border-slate-100 dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200"
+              >
+                {section.links.map((link) => {
+                  if (!defaultOpen) {
+                    defaultOpen = link.href === router.pathname
+                  }
+                  return (
                     <li key={link.href} className="relative">
                       <Link
                         href={link.href}
@@ -31,12 +40,16 @@ export function Navigation({ navigation, className }) {
                         {link.title}
                       </Link>
                     </li>
-                  ))}
-                </ul>
-              </Accordion>
-            </h2>
-          </li>
-        ))}
+                  )
+                })}
+              </ul>
+            ),
+            defaultOpen: defaultOpen || (router.pathname == '/' && index == 0),
+            action: () => {},
+          })
+        })}
+
+        <AccordionGroup accordionsData={accordionsData} hideSelf={true} />
       </ul>
     </nav>
   )

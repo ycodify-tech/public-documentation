@@ -25,7 +25,7 @@ $ curl -i -X POST \
     "email":"tony@stark.com", \
     "status":1, \
     "roles":[{ "name":"ROLE_ADMIN" }]
-  }' http://api.Ycodify.com/api/caccount-mngr/account
+  }' https://api.Ycodify.com/api/caccount-mngr/account
 ```
 
 #### Retorno de Sucesso:
@@ -74,7 +74,7 @@ Depois de ter uma conta de serviço registrada, você precisará se autenticar p
 $ curl -i -X POST \
   -u "frontend:13579" \
   -d "username=stark@mark&password=12345&grant_type=password" \
-  http://api.Ycodify.com/api/csecurity/oauth/token
+  https://api.Ycodify.com/api/csecurity/oauth/token
 ```
 
 #### _Retorno com Sucesso_
@@ -116,13 +116,13 @@ Agora que você tem um **token** (o `access_token` acima) que o identifica na pl
 #### Request [by curl]
 
 ```shell
-$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" http://api.Ycodify.com/api/caccount-mngr/account/username/tony
+$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.Ycodify.com/api/caccount-mngr/account/username/tony
 ```
 
 #### Request [by curl]
 
 ```shell
-$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" http://api.Ycodify.com/api/caccount-mngr/account
+$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.Ycodify.com/api/caccount-mngr/account
 ```
 
 > É **importante** <font color="red">somente o usuário administrador do aplicativo</font> tem permissão para fazer solicitações a este terminal.
@@ -194,7 +194,7 @@ $ curl -i -X PUT \
     "status":1, \
     "name":"tony stark", \
     "roles":[{ "name":"ROLE_ADMIN" }] \
-   }' http://api.Ycodify.com/api/client-account-mngr/account/tony/version/0
+   }' https://api.Ycodify.com/api/client-account-mngr/account/tony/version/0
 ```
 
 > É **importante** observar o atributo `version`. Seu valor deve ser recuperado daquele definido na subseção **1.2**.
@@ -240,58 +240,7 @@ Aqui você encontrará informações sobre como consumir nossos serviços de bac
 
 &nbsp;
 
-### 2.1.1. Crie um novo _Objeto_
-
-Agora que você tem uma conta e um esquema de dados definidos, para criar novos dados e mantê-los no banco de dados do seu aplicativo, você deve usar o seguinte endpoint da seguinte forma:
-
-**/project-name/{projectName}/schema/nosql-columnar/entity** => Create nosql columnar entity
-
-| Name          | Description                                                          | Type   | Field  |
-| ------------- | -------------------------------------------------------------------- | ------ | ------ |
-| Authorization | The Authorization header of the request. Value it with the JWT token | string | header |
-| UserIDToken   | UserIDToken                                                          | string | header |
-| body          |                                                                      |        | body   |
-| body<entity>  | The object that describes the entity to be created                   |        | ()     |
-| projectName   | The customer entity schema name                                      | string | path   |
-
-#### _Possíveis retornos_
-
-| Code | Description           |
-| ---- | --------------------- |
-| 200  | Ok                    |
-| 201  | Success               |
-| 400  | Bad Request           |
-| 401  | Unauthorized Access   |
-| 403  | Forbidden             |
-| 404  | Not Found             |
-| 417  | Expectation Failed    |
-| 500  | Internal Server Error |
-
-**Importante**: a classe de objeto definida possui mais atributos do que os criados. A plataforma Ycodify cria, para cada classe definida, outras seis definições de atributos. São eles:
-
-`id` => Informa um identificador único para este objeto em seu espaço de valores;
-
-`user` => Informa o nome de usuário que solicitou a operação de backend;
-
-`role` => Identifica a qual _role_ este usuário pertence;
-
-`createdat` => Indica a data em que esses dados foram persistidos pela primeira vez no banco de dados;
-
-`updatedat` => Informa a última operação de atualização desses dados na base;
-
-`version` => Pode ser usado para realizar o controle de concorrência caso a entidade que detém este atributo tenha
-sido configurada para realizar o controle de acesso concorrente (de acordo com o que foi configurado em
-
-```
-{ "_classDef": { "_concurrencyControl" : true } }
-```
-
-).
-Aqui, `version` é `null` porque `_concurrencyControl` para a classe `armor` é `false`.
-
-Todos esses seis atributos são controlados exclusivamente pela plataforma, o usuário não tem controle sobre seus valores.
-
-### 2.1.2. Crie e persista um novo _Objeto_
+### 2.1. Crie e persista um novo _Objeto_
 
 Agora que você tem uma conta e um esquema de dados definidos, para criar novos dados e mantê-los no banco de dados do seu aplicativo, você deve usar o seguinte endpoint da seguinte forma:
 
@@ -304,22 +253,10 @@ $ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -d '{ \
     "action": "CREATE", \
-    "objeto": { \
-      "classUID": "armor", \
+    "armor": { \
       "name": "Mark II", \
-      "role": "ROLE_ADMIN" \
     } \
-  }'  http://api.Ycodify.com/api/interpreters-grid/s
-```
-
-```shell
-$ curl -i -X POST \
-  -H 'Authorization: Bearer <access_token>' \
-  -H 'X-TenantID: stark@mark' \
-  -H 'Content-Type: application/json' \
-  -d '{ \
-      "name": "Mark II" \
-    }'  http://api.Ycodify.com/interpreters-grid/p/rest/armor
+  }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
 Sua aplicação, ao enviar uma solicitação de persistência para um dado recém criado, necessariamente precisará informar os cabeçalhos "X-TenantID". Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo, dado após uma autenticação de usuário de seu aplicativo.
@@ -340,9 +277,18 @@ A operação, se **sucesso**, retornará o status HTTP 201 e a mensagem abaixo:
 }
 ```
 
-> **Importante**: a classe de objeto definida como _armor_, possui mais atributos do que os criados. A plataforma Ycodify cria, para cada classe definida, outras seis definições de atributos. São eles: `id`, que informa um identificador único para este objeto em seu espaço de valores; `user`, que informa o nome de usuário que solicitou a operação de backend; `role`, que identifica a qual _role_ este usuário pertence; `createdat`, que indica a data em que esses dados foram persistidos pela primeira vez no banco de dados; `updatedat`, que informa a última operação de atualização desses dados na base; e, por fim, `version`, que pode ser usado para realizar o controle de concorrência caso a entidade que detém este atributo tenha sido configurada para realizar o controle de acesso concorrente (de acordo com o que foi configurado em `{ "_classDef": { "_concurrencyControl" : true } }`). Aqui, `version` é `null` porque `_concurrencyControl` para a classe `armor` é `false`.
->
-> Todos esses seis atributos são controlados exclusivamente pela plataforma, o usuário não tem controle sobre seus valores.
+**Importante**: a classe de objeto definida como _armor_, possui mais atributos do que os criados. A plataforma Ycodify cria, para cada classe definida, outras seis definições de atributos. São eles:
+
+> | Field     | Description                                                                            |
+> | --------- | -------------------------------------------------------------------------------------- |
+> | id        | Identificador único para este objeto em seu espaço de valores                          |
+> | user      | Nome de usuário que solicitou a operação de backend                                    |
+> | role      | Identifica a qual _role_ este usuário pertence                                         |
+> | createdat | Indica a data em que esses dados foram persistidos pela primeira vez no banco de dados |
+> | updatedat | Informa a última operação de atualização desses dados na base                          |
+> | version   | Pode ser usado para realizar o controle de concorrência                                |
+
+Todos esses seis atributos são controlados exclusivamente pela plataforma, o usuário não tem controle sobre seus valores.
 
 #### _Retorno com Erro_
 
@@ -357,7 +303,14 @@ Se **erro**, o retorno deverá sempre ter esse formato:
 }
 ```
 
-Os tipos de erro _HTTP Status_: 400 (**Solicitação malformada**); 406 (**Conflito** - objeto já existe); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+**Os possíveis erros são**
+
+> | Code | Description                                                 |
+> | ---- | ----------------------------------------------------------- |
+> | 400  | **Solicitação malformada**                                  |
+> | 406  | **Conflito** - Objeto já existente                          |
+> | 417  | **Falha na operação** - Motivo imprevisto                   |
+> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
 
 &nbsp;
 
@@ -378,18 +331,10 @@ $ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -d '{ \
     "action": "READ", \
-    "objeto": { \
-      "classUID": "armor", \
+    "armor": { \
       "id": 1 \
     } \
-  }'  http://api.Ycodify.com/interpreters-grid/p
-```
-
-```shell
-$ curl -i -X GET \
-  -H 'Authorization: Bearer <access_token>' \
-  -H 'X-TenantID: stark@mark' \
-  }'  http://api.Ycodify.com/interpreters-grid/p/rest/armor/id/4
+  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
 Seu aplicativo, ao enviar uma solicitação de exclusão de um dado persistido, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
@@ -423,7 +368,14 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-Os tipos de erro _HTTP Status_: 400 (**Solicitação malformada**); 404 (Dados **Não encontrado**); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+**Os possíveis erros são**
+
+> | Code | Description                                                 |
+> | ---- | ----------------------------------------------------------- |
+> | 400  | **Solicitação malformada**                                  |
+> | 406  | **Conflito** - Objeto já existente                          |
+> | 417  | **Falha na operação** - Motivo imprevisto                   |
+> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
 
 #### 2.2.2. Obtenha uma lista de _Objetos_ persistentes
 
@@ -438,13 +390,12 @@ $ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -d '{ \
     "action": "READ", \
-    "objeto": { \
-      "classUID": "armor", \
+    "armor": { \
       "name": {
         "IN": ["Mark I","Mark II"]
       }
     } \
-  }'  http://api.Ycodify.com/interpreters-grid/p
+  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
 Seu aplicativo, ao enviar uma solicitação de recuperação de dados persistentes, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
@@ -480,7 +431,14 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-Os tipos de erro _HTTP Status_: 400 (**Solicitação malformada**); 404 (Dados **Não encontrado**); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+**Os possíveis erros são**
+
+> | Code | Description                                                 |
+> | ---- | ----------------------------------------------------------- |
+> | 400  | **Solicitação malformada**                                  |
+> | 406  | **Conflito** - Objeto já existente                          |
+> | 417  | **Falha na operação** - Motivo imprevisto                   |
+> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
 
 &nbsp;
 
@@ -497,22 +455,11 @@ $ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -d '{ \
     "action": "UPDATE", \
-    "objeto": { \
-      "classUID": "armor", \
+    "armor": { \
       "id": 1, \
       "name": "Mark I" \
     } \
-  }'  http://api.Ycodify.com/interpreters-grid/p
-```
-
-```shell
-$ curl -i -X PUT \
-  -H 'Authorization: Bearer <access_token>' \
-  -H 'X-TenantID: stark@mark' \
-  -H 'Content-Type: application/json' \
-  -d '{ \
-        "name": "Mark I" \
-    }'  http://api.Ycodify.com/interpreters-grid/p/rest/armor/id/4
+  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
 Sua aplicação, ao enviar uma solicitação de persistência para atualização de dados, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
@@ -559,14 +506,7 @@ $ curl -i -X POST \
       "classUID": "armor", \
       "id": 1 \
     } \
-  }'  http://api.Ycodify.com/interpreters-grid/p
-```
-
-```shell
-$ curl -i -X DELETE \
-  -H 'Authorization: Bearer <access_token>' \
-  -H 'X-TenantID: stark@mark' \
-  }'  http://api.Ycodify.com/interpreters-grid/p/rest/armor/id/4
+  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
 Seu aplicativo, ao enviar uma solicitação de exclusão de um dado persistente, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
@@ -592,7 +532,14 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-Os tipos de erro de status HTTP: 400 (**Solicitação malformada**); 404 (Dados **Não encontrado**); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+**Os possíveis erros são**
+
+> | Code | Description                                                 |
+> | ---- | ----------------------------------------------------------- |
+> | 400  | **Solicitação malformada**                                  |
+> | 406  | **Conflito** - Objeto já existente                          |
+> | 417  | **Falha na operação** - Motivo imprevisto                   |
+> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
 
 &nbsp;
 
