@@ -89,4 +89,17 @@ export const NavigationStructure = [
     title: 'Glossary',
     links: [{ title: 'Glossary', href: '/docs/glossary' }],
   },
+  {
+    title: 'Referência',
+    links: [
+      {
+        title: 'Serviço de modelagem',
+        href: '/docs/referencia/servico-modelagem',
+      },
+      {
+        title: 'Serviço de persistência',
+        href: '/docs/referencia/servico-persistencia',
+      },
+    ],
+  },
 ]
