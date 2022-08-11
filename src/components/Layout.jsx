@@ -148,7 +148,7 @@ export function Layout({ children, title, tableOfContents }) {
       <div className="relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-          <div className="sticky top-[4.5rem] h-[calc(100vh-4.5rem)] overflow-x-hidden overflow-y-scroll py-16">
+          <div className="sticky top-[4.5rem] my-16 h-[calc(100vh-4.5rem)] overflow-x-hidden overflow-y-scroll">
             <Navigation
               navigation={navigation}
               className="mr-4 w-72 min-w-[272px] max-w-[272px] xl:w-max"
@@ -206,7 +206,7 @@ export function Layout({ children, title, tableOfContents }) {
             )}
           </dl>
         </div>
-        <div className="hidden overflow-x-hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+        <div className="hidden overflow-x-hidden xl:sticky xl:top-[4.5rem] xl:my-16 xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:pr-6">
           <nav
             aria-labelledby="on-this-page-title"
             className="w-56 overflow-x-hidden overflow-y-scroll"
