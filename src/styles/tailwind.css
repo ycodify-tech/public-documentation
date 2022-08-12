@@ -6,15 +6,16 @@
 @import 'tailwindcss/utilities';
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 5px;
+  height: 4px;
 }
 
+/* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
 ::-webkit-scrollbar-track {
-  background: rgba(105, 105, 105, 0);
-  margin-block: 0.15em;
 }
 
+/* aqui é a alça da barra, que demonstra a altura que você está na página
+  estou colocando uma cor azul clara nela*/
 ::-webkit-scrollbar-thumb {
-  background: rgba(105, 105, 105, 0.6);
-  border-radius: 100vw;
+  background: rgb(105, 105, 105);
 }

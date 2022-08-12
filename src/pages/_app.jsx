@@ -3,6 +3,8 @@ import { slugifyWithCounter } from '@sindresorhus/slugify'
 
 import { Layout } from '@/components/Layout'
 
+import * as ThemeContext from '@/contexts/ThemeContext'
+
 import 'focus-visible'
 import '@/styles/tailwind.css'
 
@@ -63,13 +65,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        {description && <meta name="description" content={description} />}
-      </Head>
-      <Layout title={title} tableOfContents={tableOfContents}>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeContext.ThemeProvider>
+        <Head>
+          <title>{pageTitle}</title>
+          {description && <meta name="description" content={description} />}
+        </Head>
+        <Layout title={title} tableOfContents={tableOfContents}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeContext.ThemeProvider>
     </>
   )
 }
