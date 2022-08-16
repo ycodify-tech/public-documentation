@@ -3,6 +3,8 @@ title: Quickstart - Criação de Conta e Criação de Schema de Dados
 description: Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso script yc.sh para linhas de comando bashscript. Usando-o, você será capaz de criar uma conta em nosso sandbox e criar seu primeiro schema de dados.
 ---
 
+---
+
 A seguir está apresentado como usar o ambiente de modelagem oferecido pelo Ycodify para o fim de criar, manter e evoluir um schema de dados para para uma aplicação qualquer. Ao final, aprenda como habilitar a execução do serviço de Backend Ycodify.
 
 ## 1. Baixar o script _yc.sh_

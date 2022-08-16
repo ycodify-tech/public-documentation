@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
 
   let pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
-    `${pageProps.markdoc?.frontmatter.title} - Docs`
+    `Ycodify - ${pageProps.markdoc?.frontmatter.title}`
 
   let description = pageProps.markdoc?.frontmatter.description
 
@@ -68,6 +68,11 @@ export default function App({ Component, pageProps }) {
       <ThemeContext.ThemeProvider>
         <Head>
           <title>{pageTitle}</title>
+          <link
+            rel="shortcut icon"
+            href="/images/favicon.ico"
+            type="image/x-icon"
+          />
           {description && <meta name="description" content={description} />}
         </Head>
         <Layout title={title} tableOfContents={tableOfContents}>

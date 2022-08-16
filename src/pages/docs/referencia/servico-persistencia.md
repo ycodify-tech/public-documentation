@@ -2,6 +2,8 @@
 title: Descrições sobre o serviço de persistência
 ---
 
+---
+
 ## 1. Para **criar um novo registro de dados** para um schema de dados já modelado
 
 Você pode enviar um request para o endpoint do serviço de persistência sem controle de acesso por JWT. Ou seja, usando apenas o hash de autorização.

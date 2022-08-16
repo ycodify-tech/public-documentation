@@ -6,9 +6,9 @@ export const NavigationStructure = [
   {
     title: 'Getting started',
     links: [
-      { title: 'Quickstart com Yc Web', href: '/docs/getting-started/' },
-      { title: 'Quickstart com Yc CLI', href: '/docs/getting-started/' },
-      { title: 'How it works', href: '/docs/getting-started/' },
+      { title: 'Quickstart com Yc Web', href: '/docs/getting-started/yc-web' },
+      { title: 'Quickstart com Yc CLI', href: '/docs/getting-started/yc-cli' },
+      { title: 'How it works', href: '/docs/getting-started/how-it-works' },
     ],
   },
   {

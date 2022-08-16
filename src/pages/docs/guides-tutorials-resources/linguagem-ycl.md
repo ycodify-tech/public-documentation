@@ -3,6 +3,8 @@ title: Quickstart - Uso da Linguagem YCL
 description: Esse documento apresenta a linguagem YCL e suas formas de uso. Esse uso implica a definição de schemas de dados e configurações dos serviços de backend que operarão sobre o schema de dados anteriormente definidos.
 ---
 
+---
+
 A linguagem YC tem por finalidade ser usada para especificação de aspectos estáticos de dados um domínio de negócios, no contexto de aplicações de software em sistemas de informação. Sua razão de ser é a preocupação central quanto ao uso integrado à plataforma YC de forma a ser a mais simples e intuitiva possível.
 
 Este documento tem por finalidade a apresentação dessa linguagem. Essa apresentação de sua sintáxe e semântica será feita por meio de sua aplicação em exemplos de uso concretos. A seguir, primeiramente, apresentaremos suas palavras-reservadas tipos de atributos, símbolos e operadores.

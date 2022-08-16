@@ -3,6 +3,8 @@ title: Quickstart - Consumindo Serviços de Backend para um Schema de Dados
 description: Com esse documeto você saberá como consumir os serviços de backend para um schema de dados, criado e mantido por meio do que está apresentado em 1. Quickstart - Criação de Conta e Criação de Schema de Dados.
 ---
 
+---
+
 A seguir estão exemplos de uso dos endpoints de serviço de backend da plataforma Ycodify para sua aplicação.
 
 ## 1. Criar, Obter and Atualizar uma Conta de sua Aplicação

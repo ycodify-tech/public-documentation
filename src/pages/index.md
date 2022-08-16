@@ -1,7 +1,9 @@
 ---
 title: Iniciando
-pageTitle: ycodify - Docs
+pageTitle: Ycodify - Docs
 description: Desenvolva software mais rápido. Concentre-se no que importa ao seu cliente. Deixe o backend e devops com a gente.
+---
+
 ---
 
 Aqui você encontrará um sumário da documentação da plataforma Ycodify. A seguir, um Sumário dos documentos, suas referências, e suas finalidades.
