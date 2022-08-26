@@ -126,6 +126,7 @@ export function Layout({ children, title, tableOfContents }) {
     section.links.find((link) => link.href === router.pathname)
   )
   let currentSection = useTableOfContents(tableOfContents)
+  const [dismissed, setDismissed] = useState(false)
 
   function isActive(section) {
     if (section.id === currentSection) {
@@ -137,11 +138,19 @@ export function Layout({ children, title, tableOfContents }) {
     return section.children.findIndex(isActive) > -1
   }
 
+  useEffect(() => {
+    window.onstorage = function () {
+      setDismissed(window.sessionStorage.getItem('hero') === 'dismissed')
+    }
+
+    setDismissed(window.sessionStorage.getItem('hero') === 'dismissed')
+  }, [])
+
   return (
     <>
       <Header navigation={navigation} />
 
-      {isHomePage && <Hero />}
+      {!dismissed && <Hero />}
 
       <div className="dark:dark-scrollbar"></div>
 

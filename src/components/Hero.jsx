@@ -7,6 +7,7 @@ import { Button } from '@/components/Button'
 import { HeroBackground } from '@/components/HeroBackground'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 import * as ThemeContext from '@/contexts/ThemeContext'
 
 const codeLanguage = 'ycl'
@@ -41,11 +42,24 @@ function TrafficLightsIcon(props) {
 
 export function Hero() {
   const { isDark } = ThemeContext.useTheme()
+
+  function dismiss() {
+    window.sessionStorage.setItem('hero', 'dismissed')
+    window.dispatchEvent(new Event('storage'))
+  }
+
   return (
     <div className="overflow-hidden bg-white dark:-mb-32 dark:mt-[-4.5rem] dark:bg-slate-900 dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
-          <div className="relative z-10 md:text-center lg:text-left">
+          <div className="relative z-10 flex flex-col gap-y-3 md:text-center lg:text-left">
+            <XMarkIcon
+              width={20}
+              onClick={dismiss}
+              className={`z-20 cursor-pointer ${
+                isDark ? 'text-white' : 'text-slate-800'
+              }`}
+            />
             <Image
               className="absolute bottom-full right-full -mr-72 -mb-56 opacity-50"
               src={blurCyanImage}
