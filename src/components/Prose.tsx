@@ -1,8 +1,17 @@
 import clsx from 'clsx'
+import { ReactNode } from 'react'
 
-export function Prose({ as: Component = 'div', className, ...props }) {
+type ProseProps = {
+  className?: string
+  children: ReactNode
+}
+
+export function Prose({
+  className,
+  ...props
+}: ProseProps) {
   return (
-    <Component
+    <div
       className={clsx(
         className,
         'prose prose-slate max-w-none dark:prose-invert dark:text-slate-400',
