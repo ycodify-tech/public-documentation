@@ -1,6 +1,6 @@
 import { DarkMode, LightMode } from '@/components/Icon'
 
-export function ChevronUp({ className }) {
+export function ChevronUp({ className }: { className: string }) {
   return (
     <>
       <LightMode>

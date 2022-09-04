@@ -1,5 +1,17 @@
-import { createRef, useRef } from 'react'
+import { createRef, ReactNode, Ref, useRef } from 'react'
 import { Accordion } from './Accordion'
+
+type AccordionGroup = {
+  hideSelf?: boolean
+  accordionsData: {
+    id: string
+    title: string
+    content: ReactNode
+    defaultOpen?: boolean
+    elementRef: Ref<HTMLButtonElement>
+    hideOther?: () => void
+  }[]
+}
 
 export function AccordionGroup({ accordionsData, hideSelf = false }) {
   const elementsRef = useRef(accordionsData?.map(() => createRef()))

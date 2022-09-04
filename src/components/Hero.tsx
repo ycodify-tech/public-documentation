@@ -1,7 +1,7 @@
-import { Fragment } from 'react'
+import { Fragment, RefObject } from 'react'
 import Image from 'next/future/image'
 import clsx from 'clsx'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 
 import { Button } from '@/components/Button'
 import { HeroBackground } from '@/components/HeroBackground'
@@ -30,7 +30,7 @@ const tabs = [
   { name: 'outro-arquivo.outra-extensao', isActive: false },
 ]
 
-function TrafficLightsIcon(props) {
+function TrafficLightsIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
       <circle cx="5" cy="5" r="4.5" />
@@ -51,7 +51,7 @@ export function Hero() {
   return (
     <div className="overflow-hidden bg-white dark:-mb-32 dark:mt-[-4.5rem] dark:bg-slate-900 dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
+        <div className="grid items-center max-w-2xl grid-cols-1 px-4 mx-auto gap-y-16 gap-x-8 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 flex flex-col gap-y-3 md:text-center lg:text-left">
             <XMarkIcon
               width={20}
@@ -61,7 +61,7 @@ export function Hero() {
               }`}
             />
             <Image
-              className="absolute bottom-full right-full -mr-72 -mb-56 opacity-50"
+              className="absolute -mb-56 opacity-50 bottom-full right-full -mr-72"
               src={blurCyanImage}
               alt=""
               width={530}
@@ -70,7 +70,7 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <p className="inline bg-gradient-to-r from-indigo-400 via-sky-600 to-indigo-400 bg-clip-text font-display text-4xl tracking-tight text-transparent dark:from-indigo-200 dark:via-sky-400 dark:to-indigo-200">
+              <p className="inline text-4xl tracking-tight text-transparent bg-gradient-to-r from-indigo-400 via-sky-600 to-indigo-400 bg-clip-text font-display dark:from-indigo-200 dark:via-sky-400 dark:to-indigo-200">
                 Desenvolva software mais rápido.
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-600 dark:text-slate-400">
@@ -79,7 +79,7 @@ export function Hero() {
                 software em prazos até 60% mais curtos, reduzindo os custos de
                 produção, operação e manutenção de software.
               </p>
-              <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
+              <div className="flex gap-4 mt-8 md:justify-center lg:justify-start">
                 <Button href="https://api.ycodify.com/app/index.html?do=r">
                   Experimente
                 </Button>
@@ -120,11 +120,11 @@ export function Hero() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />
               <div className="relative rounded-2xl bg-[#0A101F]/80 ring-1 ring-white/10 backdrop-blur">
-                <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-sky-300/0 via-sky-300/70 to-sky-300/0" />
-                <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-blue-400/0 via-blue-400 to-blue-400/0" />
-                <div className="pl-4 pt-4">
+                <div className="absolute h-px -top-px left-20 right-11 bg-gradient-to-r from-sky-300/0 via-sky-300/70 to-sky-300/0" />
+                <div className="absolute h-px -bottom-px left-11 right-20 bg-gradient-to-r from-blue-400/0 via-blue-400 to-blue-400/0" />
+                <div className="pt-4 pl-4">
                   <TrafficLightsIcon className="h-2.5 w-auto stroke-slate-500 dark:stroke-slate-500/30" />
-                  <div className="mt-4 flex space-x-2 text-xs">
+                  <div className="flex mt-4 space-x-2 text-xs">
                     {tabs.map((tab) => (
                       <div
                         key={tab.name}
@@ -146,10 +146,10 @@ export function Hero() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 flex items-start px-1 text-sm">
+                  <div className="flex items-start px-1 mt-6 text-sm">
                     <div
                       aria-hidden="true"
-                      className="select-none border-r border-slate-300/5 pr-4 font-mono text-slate-600"
+                      className="pr-4 font-mono border-r select-none border-slate-300/5 text-slate-600"
                     >
                       {Array.from({
                         length: code2.split('\n').length,
@@ -163,7 +163,7 @@ export function Hero() {
                     <Highlight
                       {...defaultProps}
                       code={code2}
-                      language={codeLanguage}
+                      language={codeLanguage as Language}
                       theme={undefined}
                     >
                       {({
