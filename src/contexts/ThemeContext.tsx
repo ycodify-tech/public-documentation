@@ -9,6 +9,7 @@ export const ThemeContext = createContext({} as ThemeContextProps)
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false)
 
+
   useEffect(() => {
     new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {

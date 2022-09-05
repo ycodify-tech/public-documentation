@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/_app.jsx", "src/components/Layout.jsx", "src/components/Search.jsx", "src/components/Button.jsx", "src/pages/_app.jsx", "src/pages/_app.jsx", "src/pages/_document.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -40,8 +40,7 @@ function Header({ navigation }: HeaderProps) {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
-      const opt = { passive: true }
-      window.removeEventListener('scroll', onScroll, opt)
+      window.removeEventListener('scroll', onScroll,  { passive: true })
     }
   }, [])
 
