@@ -50,30 +50,11 @@ Adicione os atributos que quiser e quanto preencher o formulário completamente,
 
 ![Image](/images/yc-web/createEntity3.png)
 
-## 5. Criando relacionamentos no seu schema
-
-Para isso, criaremos uma nova tabela **cliente** e relacionaremos o campo **clientid** com a tabela **livro**
-
-**imagem de exemplo criando a tabela cliente com clientid e nome**
-
-Também criaremos o campo clientid na tabela **livro**. Para isso, navegaremos no menu **Schema Manager** > **livro** e clicaremos em **Add attribute**
-
-**imagem de exemplo criando o campo clientid na tabela livro**
-
-Por fim, navegaremos no menu **Schema Manager** > **livro** e clicaremos na aba **Associations**, então, criaremos uma associação com nome clientid referenciando a entidade cliente e podendo ser nullable, pois um livro pode não estar associado a um cliente.
-
-**imagem de exemplo criando a associação**
-
-## 6. Retorno das operações
-
-Você poderá visualizar o retorno da operação em formato Json ou tabela, e copiar o código referente àquela operação ao clicar em **Code exporter**
-
-![Image](/images/yc-web/7.png)
-
-## 7. Exclusão de schema
+## 4. Exclusão de schema
 
 Para excluir um schema, basta voltar ao dashboard e clicar na engrenagem ao lado do nome do schema que deseja excluir, clicar em **Delete schema** e confirmar a exclusão.
 
 _**Lembre-se que essa ação não pode ser desfeita**_
 
-**imagem de exemplo excluindo o schema**
+![Image](/images/yc-web/deleteSchema.png)
+![Image](/images/yc-web/deleteSchema2.png)

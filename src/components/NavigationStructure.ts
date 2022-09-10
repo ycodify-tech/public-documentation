@@ -13,7 +13,7 @@ export const NavigationStructure = [
   },
   {
     title: 'Schema',
-    links: [{ title: 'Schema', href: '/docs/schema/schema' }],
+    links: [{ title: 'Relationships', href: '/docs/schema/relationships' }],
   },
   {
     title: 'Operations',
