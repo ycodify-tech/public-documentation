@@ -8,61 +8,47 @@ Um guia introdutório ao Ycodify Web
 
 ## 1. Criar uma conta
 
-Navegue até a [página de cadastro](https://api.ycodify.com/app/index.html?do=r) e crie sua conta.
+Navegue até a [página de cadastro](https://ycodify-console.vercel.app/) e crie sua conta clicando na sessão de **sign up**.
+
+![Image](/images/yc-web/login.png)
+
+Ao clicar em **sign up**, você vai ver um novo formulário de criação de usuário
+
+![Image](/images/yc-web/createAccount.png)
+
+Ao preencher o formulário, clique em **create user** e você criara seu usuário e entrará no sistema
 
 ## 2. Criar um projeto
 
-![Image](/images/yc-web/1.png)
+Após fazer o login, você vai estar na dashboard de projetos, para criar um novo projeto, clique em **New Project**
+
+![Image](/images/yc-web/dashboard.png)
+
+Com isso vai abrir um slide para configurar o seu novo projeto, para um projeto do zero você deve adicionar um nome e selecionar um plano
+
+![Image](/images/yc-web/dashboardCreateProject.png)
+
+Caso já tenha um projeto pronto no formato **.txt**, você pode importar o projeto e com isso irá abrir um editor para configurar o seu projeto, nesse editor você deve adicionar **c:** no nome do schema para que ele seja criado
+
+![Image](/images/yc-web/dashboardCreateProject3.png)
+
+Após ter configurado o projeto e selecionado o plano, você deve clicar em **Create project**
+
+![Image](/images/yc-web/dashboardCreateProject2.png)
 
 ## 3. Criar tabelas no seu schema
 
-![Image](/images/yc-web/2.png)
+Ao concluir a criação você vai estar na aba de **Schema Manager**, na sessão **Entities**, para criar uma entidade, clique no botão **Create entity**
 
-Adicione os atributos que quiser e proceda com **Create entity**
+![Image](/images/yc-web/createEntity1.png)
 
-![Image](/images/yc-web/3.png)
+Após isso você vai se deparar com o formulário de criação de entidade
 
-## 4. Realizando operações no seu schema
+![Image](/images/yc-web/createEntity2.png)
 
-Primeiramente será necessário publicar as modificações feitas no schema
+Adicione os atributos que quiser e quanto preencher o formulário completamente, termine a criação clicando em **Create entity**
 
-![Image](/images/yc-web/4.png)
-
-Após isso, navegue no menu **Data Manager** > **entity** (no caso, **livro**) e selecione a operação que deseja realizar
-
-### 4.1 Inserindo dados
-
-![Image](/images/yc-web/5.png)
-
-Com a operação selecionada, adicione os campos necessários para inserir dados naquela tabela e aperta o botão **play**
-
-Lembre-se de inserir todos os campos que não são **nullable**
-
-![Image](/images/yc-web/6.png)
-
-### 4.2 Lendo dados
-
-Para ler dados, selecione a operação **READ**. Caso não seja especificado nenhum filtro, todos os dados da tabela serão retornados.
-
-**imagem de exemplo selecionando todos os dados**
-
-Para campos do tipo **STRING** ou **TEXT**, é possível utilizar o operador **LIKE** para realizar buscas por parte do texto, basta adicionar o símbolo **%** antes e/ou depois do texto que deseja buscar.
-
-Caso deseje filtrar os resultados, especifique no objeto os campos que deseja filtrar e seus respectivos valores
-
-**imagem de exemplo filtrando os dados**
-
-### 4.3 Atualizando dados
-
-Para atualizar dados, selecione a operação **UPDATE**. Será necessário especificar o campo **id** do registro que deseja atualizar e o objeto inteiro, com os campos a serem atualizados e os que não serão atualizados.
-
-**imagem de exemplo atualizando os dados**
-
-### 4.4 Apagando dados
-
-Para apagar dados, basta selecionar a operação **DELETE** e especificar os campos que deseja filtrar e seus respectivos valores
-
-**imagem de exemplo apagando uma entrada**
+![Image](/images/yc-web/createEntity3.png)
 
 ## 5. Criando relacionamentos no seu schema
 
