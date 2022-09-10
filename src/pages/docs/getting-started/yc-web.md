@@ -36,18 +36,58 @@ Após isso, navegue no menu **Data Manager** > **entity** (no caso, **livro**) e
 
 Com a operação selecionada, adicione os campos necessários para inserir dados naquela tabela e aperta o botão **play**
 
+Lembre-se de inserir todos os campos que não são **nullable**
+
 ![Image](/images/yc-web/6.png)
 
-### 4.2 Atualizando dados
+### 4.2 Lendo dados
 
-### 4.3 Lendo dados
+Para ler dados, selecione a operação **READ**. Caso não seja especificado nenhum filtro, todos os dados da tabela serão retornados.
+
+**imagem de exemplo selecionando todos os dados**
+
+Para campos do tipo **STRING** ou **TEXT**, é possível utilizar o operador **LIKE** para realizar buscas por parte do texto, basta adicionar o símbolo **%** antes e/ou depois do texto que deseja buscar.
+
+Caso deseje filtrar os resultados, especifique no objeto os campos que deseja filtrar e seus respectivos valores
+
+**imagem de exemplo filtrando os dados**
+
+### 4.3 Atualizando dados
+
+Para atualizar dados, selecione a operação **UPDATE**. Será necessário especificar o campo **id** do registro que deseja atualizar e o objeto inteiro, com os campos a serem atualizados e os que não serão atualizados.
+
+**imagem de exemplo atualizando os dados**
 
 ### 4.4 Apagando dados
 
-## 5. Retorno das operações
+Para apagar dados, basta selecionar a operação **DELETE** e especificar os campos que deseja filtrar e seus respectivos valores
+
+**imagem de exemplo apagando uma entrada**
+
+## 5. Criando relacionamentos no seu schema
+
+Para isso, criaremos uma nova tabela **cliente** e relacionaremos o campo **clientid** com a tabela **livro**
+
+**imagem de exemplo criando a tabela cliente com clientid e nome**
+
+Também criaremos o campo clientid na tabela **livro**. Para isso, navegaremos no menu **Schema Manager** > **livro** e clicaremos em **Add attribute**
+
+**imagem de exemplo criando o campo clientid na tabela livro**
+
+Por fim, navegaremos no menu **Schema Manager** > **livro** e clicaremos na aba **Associations**, então, criaremos uma associação com nome clientid referenciando a entidade cliente e podendo ser nullable, pois um livro pode não estar associado a um cliente.
+
+**imagem de exemplo criando a associação**
+
+## 6. Retorno das operações
 
 Você poderá visualizar o retorno da operação em formato Json ou tabela, e copiar o código referente àquela operação ao clicar em **Code exporter**
 
 ![Image](/images/yc-web/7.png)
 
-![Image](/images/yc-web/.png)
+## 7. Exclusão de schema
+
+Para excluir um schema, basta voltar ao dashboard e clicar na engrenagem ao lado do nome do schema que deseja excluir, clicar em **Delete schema** e confirmar a exclusão.
+
+_**Lembre-se que essa ação não pode ser desfeita**_
+
+**imagem de exemplo excluindo o schema**
