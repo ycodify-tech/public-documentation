@@ -18,8 +18,8 @@ export const NavigationStructure = [
   {
     title: 'Operations',
     links: [
-      { title: 'Select', href: '/docs/operations/select' },
       { title: 'Insert', href: '/docs/operations/insert' },
+      { title: 'Select', href: '/docs/operations/select' },
       { title: 'Update', href: '/docs/operations/update' },
       { title: 'Delete', href: '/docs/operations/delete' },
     ],
@@ -54,10 +54,6 @@ export const NavigationStructure = [
   {
     title: 'Guides / Tutorials / Resources',
     links: [
-      {
-        title: 'Criação de Conta e Criação de Schema de Dados com Console CLI',
-        href: '/docs/guides-tutorials-resources/conta-schema',
-      },
       {
         title: 'Consumindo Serviços de Backend para um Schema de Dados',
         href: '/docs/guides-tutorials-resources/consumindo-servicos',

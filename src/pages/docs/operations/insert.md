@@ -9,14 +9,23 @@ Primeiramente será necessário publicar as modificações feitas no schema
 
 ![Image](/images/yc-web/publishSchema.png)
 
-Após isso, navegue no menu **Data Manager** > **entity** (no caso, **livros**) e selecione a operação que deseja realizar
-
 ## 2. Inserindo dados
 
-Na aba de **Data Manager** você vai dar de cara com a tela do console, selecione o tipo **CREATE** e no sidebar selecione os campos para serem inseridos
+Navegue no menu **Data Manager** > **entity** (no caso, **livros**). Selecione a operação **Create**, e no sidebar selecione os campos para ser inseridos (é necessário todos os que não são **nullable**)
 
 ![Image](/images/yc-web/insert1.png)
 
-Após isso, com os campos marcados, preencha os dados clique no botão de play, ao executar a operação a resposta vai estar no lado direito do console
+Após isso, com os campos marcados, preencha os dados clique no botão de play. No caso da nossa entidade, preencheremos no seguinte formato
+```
+"livros": {
+  "genero": "Romance",
+  "nome": "Memórias Póstumas de Brás Cubas",
+  "autor": "Machado de Assis"
+}
+```
+
+Ao executar a operação, a resposta estará no lado direito do console
 
 ![Image](/images/yc-web/insert2.png)
+
+O retorno da operação, em caso de sucesso, será o objeto recém criado, junto com a sua chave primária **id**
