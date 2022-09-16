@@ -38,9 +38,9 @@ function Header({ navigation }: HeaderProps) {
       setIsScrolled(window.scrollY > 0)
     }
     onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('scroll', onScroll)
     return () => {
-      window.removeEventListener('scroll', onScroll,  { passive: true })
+      window.removeEventListener('scroll', onScroll)
     }
   }, [])
 
@@ -114,10 +114,10 @@ function useTableOfContents(tableOfContents: { id: string }[]) {
       }
       setCurrentSection(current)
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('scroll', onScroll)
     onScroll()
     return () => {
-      window.removeEventListener('scroll', onScroll, { passive: true })
+      window.removeEventListener('scroll', onScroll)
     }
   }, [getHeadings, tableOfContents])
 

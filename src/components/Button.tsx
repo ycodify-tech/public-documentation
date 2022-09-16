@@ -12,12 +12,14 @@ type Button = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: string
   className?: string
   href: string
+  children: React.ReactNode
 }
 
 export function Button({
   variant = 'primary',
   className,
   href,
+  children,
   ...props
 }: Button) {
   className = clsx(styles[variant], className)
@@ -28,8 +30,8 @@ export function Button({
       className={className}
       target="_blank"
       rel="noreferrer noopener"
-    />
+    >{children}</Link>
   ) : (
-    <button className={className} {...props} />
+    <button className={className} {...props}>{children}</button>
   )
 }
