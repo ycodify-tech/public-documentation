@@ -3,16 +3,16 @@ title: Update
 ---
 
 
-## 1. Publicando schema
+## 1. Publishing the schema
 
-Primeiramente será necessário publicar as modificações feitas no schema
+First you will need to publish the modifications made to the schema
 
 ![Image](/images/yc-web/publishSchema.png)
 
-## 2. Atualizando dados
+## 2. Updating the data
 
-Navegue no menu **Data Manager** > **entity** (no caso, **livros**) e selecione a operação **Update**. Será necessário especificar o campo **id** do registro que deseja atualizar e o objeto inteiro, com os campos a serem atualizados e os que não serão atualizados
+Go to **Data Manager** > **entity** (in this case, **livros**) and select the operation **Update**. you will need to specify the field **id** of the register you want to update and the whole object,with the fields to be updated and the ones that won't be updated
 
 ![Image](/images/yc-web/update1.png)
 
-A entidade com o **id** especificado será 'substituída' pela nova entidade
+The register with the specified **id** will be replaced by the new register

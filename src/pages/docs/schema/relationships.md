@@ -1,27 +1,28 @@
 ---
-title: Relacionamento
+title: Associations
 ---
 
-## 1. Criando relacionamentos no seu schema
+## 1. Creating associations in yout schema
 
-Para isso, criaremos uma nova entidade **clientes** e relacionaremos essa entidade com a entidade **livros**
+To do this, we will create a new entity called **clientes** and we will associate it with the entity **livros**
 
 ![Image](/images/yc-web/relationship1.png)
 
-Com a entidade criada, clicaremos na entidade **clientes**, e então na aba **Associations**. Nessa aba clique no botão **Add Associations**
+With the created association, we will click on the **clientes** entity, and then on the **Associations** tab. In this tab, click on the **Add Associations** button
 
 ![Image](/images/yc-web/relationship2.png)
 
-Com isso veremos o formulário para a criação de um relacionamento
+With that we will see the create association form
 
 ![Image](/images/yc-web/relationship3.png)
 
-Então, criaremos uma associação com nome **livrosDoCliente** referenciando a entidade **livros** e podendo ser **nullable**, pois um cliente pode não ter um livro associado a ele.
+Then, we will create an association with the name **livrosDoCliente** 
+Então, criaremos uma associação com nome **livrosDoCliente** referencing the entity **livros** and can be **nullable**, because a client can have or not a book associated with it.
 
 ![Image](/images/yc-web/relationship4.png)
 ![Image](/images/yc-web/relationship5.png)
 
-Caso queira editar o nome ou remover o relacionamento, clique em **edit** no relacionamento que quiser editar. Caso queira cancelar a edição, clique em **close** dentro da parte de edição
+In case you want to update the name or remove the association, click on the **edit** button. In case you want to cancel the update, click on the **close** button inside the update section
 
 ![Image](/images/yc-web/relationship6.png)
 ![Image](/images/yc-web/relationship7.png)

@@ -2,59 +2,59 @@
 title: Ycodify Web - Getting started
 ---
 
-Um guia introdutório ao Ycodify Web
+An introductory guide to Ycodify web
 
 ---
 
-## 1. Criar uma conta
+## 1. Create an account
 
-Navegue até a [página de cadastro](https://ycodify-console.vercel.app/) e crie sua conta clicando na sessão de **Sign up**.
+Go to [login page](https://ycodify-console.vercel.app/) and create your account clicking in the **Sign up** section.
 
 ![Image](/images/yc-web/login.png)
 
-Ao clicar em **Sign up**, você vai ver um novo formulário de criação de usuário
+After clicking on **Sign up**, you will see a new form to create an user
 
 ![Image](/images/yc-web/createAccount.png)
 
-Ao preencher o formulário, clique em **Create User** e você criará seu usuário e entrará no sistema
+After fill the form, click on the **Create User** button, and then you will create your user and will acess the system
 
-## 2. Criar um projeto
+## 2. Create a project
 
-Após fazer o login, você vai estar na dashboard de projetos. Para criar um novo projeto, clique em **New Project**
+After the login, you will be in the project dashboard. To create a project, click on the **New Project** button
 
 ![Image](/images/yc-web/dashboard.png)
 
-Isso vai abrir um slide para configurar o seu novo projeto. Para um projeto do zero você deve adicionar um nome e selecionar um plano
+It will open a slide to configurate the new project. To a new project, you need to add a name and select a plan
 
 ![Image](/images/yc-web/dashboardCreateProject.png)
 
-Caso já tenha um projeto pronto no formato **.txt**, você pode importar o projeto e com isso irá abrir um editor para configurar o seu projeto. Nesse editor você deve adicionar **c:** antes do nome do schema para que ele seja criado
+If you already have a project model on format **.txt**, you can import the project, and with that it will open an editor for you configurate your project. In this editor, you must add **c:** before the schema name so that it is created
 
 ![Image](/images/yc-web/dashboardCreateProject3.png)
 
-Após ter configurado o projeto e selecionado o plano, clique em **Create project**
+After configurate the project and selected the plan, click on the **Create project** button
 
 ![Image](/images/yc-web/dashboardCreateProject2.png)
 
-## 3. Criar tabelas no seu schema
+## 3. Create entities for your schema
 
-Ao concluir a criação do projeto, você será redirecionado para a aba **Schema Manager**. Na sessão **Entities**, clique no botão **Create entity** para criar uma nova entidade
+When concluding the project creation, you will be redirected to the **Schema Manager** tab. In **Entities** section, click on the **Create entity** to add a new entity to your schema
 
 ![Image](/images/yc-web/createEntity1.png)
 
-Após isso você vai se deparar com o formulário de criação de entidade
+Then you will come across the create entity form
 
 ![Image](/images/yc-web/createEntity2.png)
 
-Adicione os atributos que quiser e, quanto preencher o formulário completamente, termine a criação clicando em **Create Entity**
+Add all the attributes you want, then when you fill the form, click on the **Create entity** button
 
 ![Image](/images/yc-web/createEntity3.png)
 
-## 4. Exclusão de schema
+## 4. Delete a schema
 
-Para excluir um schema, basta voltar ao dashboard e clicar na engrenagem ao lado do nome do schema que deseja excluir. Então, clique em **Delete schema** e confirme a exclusão.
+To delete a schema, you need to go back to the dashboard and click on the gear next to the name of the project you want to delete. Then, click on the **Delete schema** button and confirm your action
 
-_**Lembre-se que essa ação não pode ser desfeita**_
+_**Remember that this action can't be undone!**_
 
 ![Image](/images/yc-web/deleteSchema.png)
 ![Image](/images/yc-web/deleteSchema2.png)

@@ -3,14 +3,14 @@ title: Delete
 ---
 
 
-## 1. Publicando schema
+## 1. Publishing the schema
 
-Primeiramente será necessário publicar as modificações feitas no schema
+First you will need to publish the modifications made to the schema
 
 ![Image](/images/yc-web/publishSchema.png)
 
-## 2. Apagando dados
+## 2. Deleting data
 
-Navegue no menu **Data Manager** > **entity** (no caso, **livros**) e selecione a operação **Delete**. Será necessário  especificar os campos pelos quais deseja filtrar e seus respectivos valores
+Go to **Data Manager** > **entity** (in this case, **livros**) and select the operation **Delete**. you will need to specify the fields you want to filter and their values
 
 ![Image](/images/yc-web/delete1.png)

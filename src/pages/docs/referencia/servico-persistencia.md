@@ -1,12 +1,12 @@
 ---
-title: Descrições sobre o serviço de persistência
+title: Descriptins about persinstence service
 ---
 
 ---
 
-## 1. Para **criar um novo registro de dados** para um schema de dados já modelado
+## 1. To **create a new data register** for a modeled data schema
 
-Você pode enviar um request para o endpoint do serviço de persistência sem controle de acesso por JWT. Ou seja, usando apenas o hash de autorização.
+You can send a request to the persinstence service endpoint without JWT access control. That is, using only authorization hash.
 
 Endpoint: _https://api.yco.../api/v0/persistence-p/s/no-ac_
 
@@ -20,11 +20,11 @@ POST: [{
 },*]
 ```
 
-Percebam que sumiu o '_classUID_'. A própria chave do vetor de objetos especifica o tipo das entidades (no nó raiz) que vão nesse vetor. Não tem mais necessidade do atributo '_\_role_'. além disso, você não envia um objeto, mas sim um vetor de objetos.
+Notice that the '_classUID_' is gone. The object vector key itself specifies the type of entities (in the root node) that will go in this vector. There's no need of attribute '_\_role_'. besides it, you don't send an object, but a vector of objects.
 
-## 2. Para **realizar uma consulta na base de dados**
+## 2. To **make a query on database**
 
-Você pode enviar um objeto conforme abaixo
+You can send an object as bellow
 
 Endpoint: _https://api.yco.../api/v0/persistence-p/s/no-ac_
 
@@ -37,21 +37,21 @@ POST: {
 }
 ```
 
-As mesmas observações para a construção desse JSON válidas para a criação/atualização, valem aqui. Importante lembrar que no caso de uma consulta que não encontre dados, o retorno terá o status code 200 e o array de registros será vazio.
+The same observations for the construction of this JSON apply here too. It is important to remember that in case of the query doesn't find any data, the return will have the 200 status code and the register array will be empty.
 
-## 3. Sobre o hash de autorização
+## 3. About the authorization hash
 
-É o valor que está em TenantAC, que vem quando você recupera a especificação do schema (pelo endpoint '_..../api/v0/modeler/.../parser/reverse_'), ou o atributo de mesmo nome que vem na lista de schemas que um cliente tenha criado, que é entregue via GET para o endpoint '_..../api/v0/modeler/.../project-name_'
+It's the value that is in TenantAC, that come when you get the specification of the schema (by endpoint '_..../api/v0/modeler/.../parser/reverse_'), or the attribute of the same name that come of the schema list that a client has created, it is delivered by a GET to the endpoint '_..../api/v0/modeler/.../project-name_'
 
-**IMPORTANTE**
+**IMPORTANT**
 
-> Se estiver usando o hash de autorização, o request terá que usar o endpoint '_https://api.ycodify.com/api/v0/interpreter-p/s/no-ac_' e ter o cabeçalho '_X-TenantAC_', além do '_X-TenantID_'. Caso contrário, o endpoint é exatamente o mesmo que o da versão anterior (_https://api.ycodify.com/api/v0/interpreter-p/s_), com os mesmos cabeçalhos.
->
-> Além disso, na declaração de qualquer das **ACTIONs**, o '_body_' terá que seguir declarando o valor para '_\_role_' (mas sem precisar de '_classUID_').
+> If you are using the authorization hash, the request will have to use the endpoint '_https://api.ycodify.com/api/v0/interpreter-p/s/no-ac_' and have the header '_X-TenantAC_', besides '_X-TenantID_'. Otherwise, the endpoint will be exactly the same as the old version (_https://api.ycodify.com/api/v0/interpreter-p/s_), with the same headers.
 
-## 4. Sobre a **declaração de associação entre entidades** feita usando a **linguagem YCL**
+> Besides, in the declaration of any **ACTIONs**, the '_body_' will have to keep declaring value to '_\_role_' (but without needing '_classUID_')
 
-Para **especificar associações/relacionamentos entre entidades** com a linguagem, segue o exemplo
+## 4. About the **declaration of associations between entities** made only using the **YCL language**
+
+To **specify associations between entities** with the language, follow the example below
 
 ```javascript
 entity turma {
@@ -67,4 +67,4 @@ entity aluno {
 }
 ```
 
-Um caso de análise entre entidade '_turma_' e '_aluno_'. Tenha em conta que a declaração de uma associação é tipo particular de declaração de atributo. Portanto, está preservada a semântica da declaração para os dois objetos da linguagem. O que muda é que no caso de declarar associação, você declara como tipo de atributo uma entidade em **seu** modelo. No segundo, declara-se um tipo primitivo.
+In case of analysis between entity '_turma_' e '_aluno_'. Note that the declaration of an association is a particular type of attribute declaration. So, the semantics of the declaration for the two objects are preserved. What changes is that in the case of declaring association, you declare as an attribute type an entity in **your** model. In the second one, a primitive type is declared

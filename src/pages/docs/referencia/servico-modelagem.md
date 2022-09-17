@@ -1,10 +1,10 @@
 ---
-title: Descrições sobre o serviço de modelagem
+title: Descriptions about modeling service
 ---
 
 ---
 
-## 1. O que é enviado no **create entity**?
+## 1. What is send to **create entity**?
 
 ```javascript
 {
@@ -14,9 +14,9 @@ title: Descrições sobre o serviço de modelagem
 }
 ```
 
-Sendo que obrigatório aí é apenas 'name'. O que vai em '_\_conf_' é o mesmo que ia anteriormente. '_dbType_' em '_\_conf_' tem valor padrão '_sql_'.
+Being mandatory only the 'name'. what going in '_\_conf_' is the same as before. '_dbType_' in '_\_conf_' has default value '_sql_'.
 
-## 2. O que é enviado para o **create attribute**?
+## 2. what is send to **create attribute**?
 
 ```javascript
 {
@@ -28,9 +28,9 @@ Sendo que obrigatório aí é apenas 'name'. O que vai em '_\_conf_' é o mesmo 
 }
 ```
 
-Sendo obrigatório apenas 'name'. Destaque que agora '_isNullable_' é '_nullable_'
+Being mandatory only the 'name'. A change is that '_isNullable_' is now '_nullable_'
 
-## 3. O que é enviado para o **create association**?
+## 3. what is sendo to **create association**?
 
 ```javascript
 {
@@ -41,4 +41,4 @@ Sendo obrigatório apenas 'name'. Destaque que agora '_isNullable_' é '_nullabl
 }
 ```
 
-Sendo obrigatório os campos '_name_' e '_type_'. Destaque que agora '_isNullable_' é '_nullable_'
+Being mandatory the fields '_name_' and '_type_'. A change is that '_isNullable_' is now '_nullable_'
