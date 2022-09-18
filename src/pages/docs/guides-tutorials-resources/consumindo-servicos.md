@@ -1,19 +1,19 @@
 ---
-title: Quickstart - Consumindo Serviços de Backend para um Schema de Dados
-description: Com esse documeto você saberá como consumir os serviços de backend para um schema de dados, criado e mantido por meio do que está apresentado em 1. Quickstart - Criação de Conta e Criação de Schema de Dados.
+title: Quickstart - Consuming backend services for a data schema
+description: With this document you will know how to consume the backend services to a data schema, starting for the **Create** operation, created and maintained through what is presented in 1. Quickstart - Creation of an account and creation of data schema
 ---
 
 ---
 
-A seguir estão exemplos de uso dos endpoints de serviço de backend da plataforma Ycodify para sua aplicação.
+The following are examples of using the Ycodify platform backend service endpoints for your application.
 
-## 1. Criar, Obter and Atualizar uma Conta de sua Aplicação
+## 1. Create, get and update an account of your application
 
-Para começar com o serviço de persistência de aplicativos, antes será necessário criar e manter uma conta de usuário para seu backend.
+To start with the app persistence service, before it you will need to create and maintained an user account for your backend.
 
-### 1.1. Criar uma nova conta de usuário para sua aplicação
+### 1.1. Create a new user account for your application
 
-Para criar uma conta em seu aplicativo, veja abaixo como fazer.
+TO create an account in your app, see a example below how to do it.
 
 #### Request [by curl]
 
@@ -30,9 +30,9 @@ $ curl -i -X POST \
   }' https://api.Ycodify.com/api/caccount-mngr/account
 ```
 
-#### Retorno de Sucesso:
+#### Success return:
 
-Esta operação, se **sucesso**, retornará HTTP Status 201, além do JSON a seguir:
+This operation, if it **succeed**, it wull return HTTP Status 201, besides the following JSON:
 
 ```javascript
 {
@@ -47,9 +47,9 @@ Esta operação, se **sucesso**, retornará HTTP Status 201, além do JSON a seg
 }
 ```
 
-#### Retorno com Erro
+#### Error return
 
-Se **erro**, a mensagem retornada será semelhante a:
+If it had an **error**, the returned message will look like this:
 
 ```javascript
 {
@@ -60,16 +60,18 @@ Se **erro**, a mensagem retornada será semelhante a:
 }
 ```
 
-Os tipos de erro _HTTP Status_: 400 (**Solicitação malformada**); 404 (Dados ** não encontrados**); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+The kind of errors _HTTP Status_: 400 (**Malformed request**); 404 (Data ** not found**); 417 (**Operation failure** - unforeseen reason
+); 500 (
+Service logic internal failure - **Server error**).
 
-> **Ok, agora que você tem sua conta** vamos ver como criar e manter seus modelos de dados. Um para cada aplicativo que você possui!
+> **Ok, now that you have your account**, we going to see how to create and maintain your data models. One for each app you own!
 
 &nbsp;
 
-### 1.2. Para fazer o login
+### 1.2. For log in
 
-Depois de ter uma conta de serviço registrada, você precisará se autenticar para acessar seu espaço de trabalho e, em seguida, poderá criar e manter seus modelos. Veja como fazer isso:
 
+After you have an registered service account, you will need to authenticate to access your workspace, and then you can create and maintain your models. See how to do this:
 #### _Request [by curl]_
 
 ```shell
@@ -79,9 +81,9 @@ $ curl -i -X POST \
   https://api.Ycodify.com/api/csecurity/oauth/token
 ```
 
-#### _Retorno com Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
+The operation, if **successfully**, it will return HTTP 200 and the message below:
 
 ```javascript
 {
@@ -98,9 +100,9 @@ A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 }
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno será HTTP Status 400, com essa mensagem:
+If the operation had an **error**, the return will ve HTTP Status 400, with this message below:
 
 ```javascript
 {
@@ -111,9 +113,10 @@ Se **erro**, o retorno será HTTP Status 400, com essa mensagem:
 
 &nbsp;
 
-### 1.3. Recuperar os dados da conta
+### 1.3. Get account data
 
-Agora que você tem um **token** (o `access_token` acima) que o identifica na plataforma, você pode usá-lo para solicitar serviços e informações da plataforma. _Claro_, informações que dizem respeito ao seu espaço de trabalho, suas aplicações. Por exemplo, você pode consultar os dados do perfil da sua conta com:
+Now you've got an **token** (the `access_token` above) that identifies you in the platform, you can use it to 
+request services and information from the platform. _Of course_, information that pertains to your workspace, your applications. For example, you can query your account profile data with:
 
 #### Request [by curl]
 
@@ -127,13 +130,13 @@ $ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_t
 $ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.Ycodify.com/api/caccount-mngr/account
 ```
 
-> É **importante** <font color="red">somente o usuário administrador do aplicativo</font> tem permissão para fazer solicitações a este terminal.
+> It's **important** <font color="red">only app admin user</font> is allowed to make request to this terminal.
 
-#### _Retorno com Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
+The operation, if **successfully**, it will return HTTP 200 and the message below:
 
-#### _caso você deseje todas as contas de sea aplicação_
+#### _in case you want to see all accounts of your app_
 
 ```javascript
 ;[
@@ -150,7 +153,7 @@ A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 ]
 ```
 
-#### _caso você deseje dados de uma única conta_
+#### _in case you want to see the data of a single account_
 
 ```javascript
 {
@@ -165,9 +168,9 @@ A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 }
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, a mensagem de retorno terá o HTTP Status 404, com o corpo conforme segue:
+If the operation had an **error**, the return will have HTTP Status 400, as following body:
 
 ```javascript
 {
@@ -180,9 +183,9 @@ Se **erro**, a mensagem de retorno terá o HTTP Status 404, com o corpo conforme
 
 &nbsp;
 
-### 1.4. Atualizar os dados da conta
+### 1.4. Update data account
 
-Usando o `access_token` você poderá atuazliar sua conta:
+Using the `access_token` you can update your account:
 
 #### _Request [by curl]_
 
@@ -199,13 +202,13 @@ $ curl -i -X PUT \
    }' https://api.Ycodify.com/api/client-account-mngr/account/tony/version/0
 ```
 
-> É **importante** observar o atributo `version`. Seu valor deve ser recuperado daquele definido na subseção **1.2**.
+> It's **important** to see the attribute `version`. Its value must be retrieved from the one defined in subsection **1.2**
 
-> **Se você deseja <font color=red>desativar</font> a conta do seu cliente**, envie a mesma solicitação acima com o atributo `status` com valor **0**.
+> **If you want to <font color=red>desativate</font> a client account**, send the same request as above with the attribute `status` with value **0**.
 
-#### _Retorno com Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
+The operation, if **successfully**, it will return HTTP 200 and the message below:
 
 ```javascript
 {
@@ -221,9 +224,9 @@ A operação, se **sucesso**, retornará HTTP Status 200 e a mensagem abaixo:
 }
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, a mensagem de erro deverá carregar o HTTP Status 404 ou 400 (**Bad Request**), com o seu corpo conforme:
+If the operation had an **error**, the return will have HTTP Status 400 or 404, with the following body:
 
 ```javascript
 {
@@ -236,15 +239,16 @@ Se **erro**, a mensagem de erro deverá carregar o HTTP Status 404 ou 400 (**Bad
 
 &nbsp;
 
-## 2. Criar, Obter, Atualizar and Remover dados relacionados ao seu _schema_ de dados
+## 2. Create, get, update and remove related data to your data _schema_
 
-Aqui você encontrará informações sobre como consumir nossos serviços de back-end para seu aplicativo. A condição de uso é a criação da conta e o esquema de dados, abordados na seção anterior.
+Here you will find information about how to consume our backend services for your app. The usage condition is account creation and data schema, covered in the previous section
 
 &nbsp;
 
-### 2.1. Crie e persista um novo _Objeto_
+### 2.1. Create and persist a new _Object_
 
-Agora que você tem uma conta e um esquema de dados definidos, para criar novos dados e mantê-los no banco de dados do seu aplicativo, você deve usar o seguinte endpoint da seguinte forma:
+Now that you have an account and a defined data schema, to create new data and keep it in your application database you should use the following endpoint as follows:
+
 
 #### _Request [by curl]_
 
@@ -261,11 +265,11 @@ $ curl -i -X POST \
   }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
-Sua aplicação, ao enviar uma solicitação de persistência para um dado recém criado, necessariamente precisará informar os cabeçalhos "X-TenantID". Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo, dado após uma autenticação de usuário de seu aplicativo.
+Your application, when sending a persistence request for a newly created data, you will necessarily need to inform the "X-TenantID" headers. It is also necessary for the app to inform the access token to your app, given after a user authentication of your app
 
-#### _Retorno de Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará o status HTTP 201 e a mensagem abaixo:
+The operation, if **successfully**, it will return HTTP 201 and the message below:
 
 ```javascript
 {
@@ -279,22 +283,22 @@ A operação, se **sucesso**, retornará o status HTTP 201 e a mensagem abaixo:
 }
 ```
 
-**Importante**: a classe de objeto definida como _armor_, possui mais atributos do que os criados. A plataforma Ycodify cria, para cada classe definida, outras seis definições de atributos. São eles:
+**Important**: the object class defined as _armor_, has more attributes than the created ones. The Ycodify platform creates, for each defined class, six other attributes definitions. And they are:
 
 > | Field     | Description                                                                            |
 > | --------- | -------------------------------------------------------------------------------------- |
-> | id        | Identificador único para este objeto em seu espaço de valores                          |
-> | user      | Nome de usuário que solicitou a operação de backend                                    |
-> | role      | Identifica a qual _role_ este usuário pertence                                         |
-> | createdat | Indica a data em que esses dados foram persistidos pela primeira vez no banco de dados |
-> | updatedat | Informa a última operação de atualização desses dados na base                          |
-> | version   | Pode ser usado para realizar o controle de concorrência                                |
+> | id        | Unique identifier for this object and it's value space                                 |
+> | user      | User name that has requested the backend operation                                     |
+> | role      | Identifies which _role_ this user belongs to                                           |
+> | createdat | Indicates the date this data was first persisted in the database                       |
+> | updatedat | Informs the last update operation of this data in the base                             |
+> | version   | It can be used to perform concurrency control                                             |
 
-Todos esses seis atributos são controlados exclusivamente pela plataforma, o usuário não tem controle sobre seus valores.
+All of this six attribute are exclusive controlled by the platform, the user has no control about it's values.
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno deverá sempre ter esse formato:
+If the operation had an **error**, the return will always have this format:
 
 ```javascript
 {
@@ -305,24 +309,25 @@ Se **erro**, o retorno deverá sempre ter esse formato:
 }
 ```
 
-**Os possíveis erros são**
+**The possible errors are**
 
 > | Code | Description                                                 |
 > | ---- | ----------------------------------------------------------- |
-> | 400  | **Solicitação malformada**                                  |
-> | 406  | **Conflito** - Objeto já existente                          |
-> | 417  | **Falha na operação** - Motivo imprevisto                   |
-> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
+> | 400  | **Malformed request**                                       |
+> | 406  | **Conflict** - Object already exists                        |
+> | 417  | **Operation failure** - Unforeseen reason                   |
+> | 500  | Service logic internal failure - **Server error**           |
 
 &nbsp;
 
-### 2.2. Obter _Objetos_ persistidos
+### 2.2. Get persisted _Objects_
 
-Existem duas maneiras de solicitar a leitura de dados. A primeira descreve como recuperar um único objeto, com base em seu atributo `id`. A segunda maneira envolve a recuperação de uma lista de instância de dados com base no uso de filtros. As próximas duas subseções mostrarão isso.
+There's two ways to request a data read. The first one describes how to get an unique object, based on your `id` attribute. The second one involves retrieving an instance list of data based on the use of filters. The next two subsections will show this.
 
-#### 2.2.1. Obtenha um _Objeto_ persistente
 
-Recuperar um único registro de dados:
+#### 2.2.1. Get a persistence _Object_
+
+Get an unique data register:
 
 #### _Request [by curl]_
 
@@ -339,11 +344,11 @@ $ curl -i -X POST \
   }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
-Seu aplicativo, ao enviar uma solicitação de exclusão de um dado persistido, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
+Your application, must send a exclusion request of a persisted data, necessarily need to inform the headers "X-TenantID" (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform)
 
-#### _Retorno de Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
+The operation, if **successfully**, it will return HTTP 200 and without message!
 
 ```javascript
 {
@@ -357,9 +362,9 @@ A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
 }
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno sempre terá este formato:
+If the operation had an **error**, the return will always have this format:
 
 ```javascript
 {
@@ -370,18 +375,18 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-**Os possíveis erros são**
+**The possible errors are**
 
 > | Code | Description                                                 |
 > | ---- | ----------------------------------------------------------- |
-> | 400  | **Solicitação malformada**                                  |
-> | 406  | **Conflito** - Objeto já existente                          |
-> | 417  | **Falha na operação** - Motivo imprevisto                   |
-> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
+> | 400  | **Malformed request**                                       |
+> | 406  | **Conflict** - Object already exists                        |
+> | 417  | **Operation failure** - Unforeseen reason                   |
+> | 500  | Service logic internal failure - **Server error**           |
 
-#### 2.2.2. Obtenha uma lista de _Objetos_ persistentes
+#### 2.2.2. Get a list of persistence _Objects_
 
-Aqui, recupere uma lista de objetos persistidos da seguinte forma:
+Here, get a list of persistence objects as follows:
 
 #### _Request [by curl]_
 
@@ -400,11 +405,11 @@ $ curl -i -X POST \
   }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
-Seu aplicativo, ao enviar uma solicitação de recuperação de dados persistentes, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
+Your application, when sending a request for retrieval of persistent data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
 
-#### _Retorno com Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
+The operation, if **successfully**, it will return HTTP 200 and without message!
 
 ```javascript
 ;[
@@ -420,9 +425,9 @@ A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
 ]
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno sempre terá este formato:
+If the operation had an **error**, the return will always have this format:
 
 ```javascript
 {
@@ -433,20 +438,20 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-**Os possíveis erros são**
+**The possible errors are**
 
 > | Code | Description                                                 |
 > | ---- | ----------------------------------------------------------- |
-> | 400  | **Solicitação malformada**                                  |
-> | 406  | **Conflito** - Objeto já existente                          |
-> | 417  | **Falha na operação** - Motivo imprevisto                   |
-> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
+> | 400  | **Malformed request**                                       |
+> | 406  | **Conflict** - Object already exists                        |
+> | 417  | **Operation failure** - Unforeseen reason                   |
+> | 500  | Service logic internal failure - **Server error**           |
 
 &nbsp;
 
-### 2.3. Atualizar um _Objeto_
+### 2.3. Update an _Object_
 
-Agora que existem objetos persistidos em seu banco de dados, você pode atualizá-los da seguinte forma:
+Now that there are persisted objects in your database, you can update them as follows:
 
 #### _Request [by curl]_
 
@@ -464,19 +469,19 @@ $ curl -i -X POST \
   }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
 
-Sua aplicação, ao enviar uma solicitação de persistência para atualização de dados, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
+Your application, when sending a persistence request to update data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
 
-#### _Retorno com Sucesso_
+#### _Successfully return_
 
-A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
+The operation, if **successfully**, it will return HTTP 200 and without message!
 
 ```javascript
 HTTP Message without body
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno sempre terá este formato:
+If the operation had an **error**, the return will always have this format:
 
 ```javascript
 {
@@ -487,13 +492,13 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-Os tipos de erro _HTTP Status_: 400 (**Solicitação malformada**); 404 (Dados **Não encontrado**); 406 (**Conflito** - objeto já existe); 417 (**Falha na operação** - motivo imprevisto); 500 (Falha interna da lógica de serviço - **suporte de chamada**).
+The _HTTP Status_ errors types: 400 (**Malformed request**); 404 (Data **Not found**); 406 (**Conflict** - Object already exists); 417 (**Operation failure** - Unforeseen reason); 500 (Service logic internal failure - **Server error**).
 
 &nbsp;
 
-### 2.4. Remoção um _Objeto_ persistido
+### 2.4. Delete a persisted _Object_
 
-Você pode excluir um objeto persistente da seguinte maneira:
+You can delete a persisted _Object as follows:
 
 #### _Request [by curl]_
 
@@ -510,20 +515,19 @@ $ curl -i -X POST \
     } \
   }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
+Your application, when sending a request to delete persistent data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
 
-Seu aplicativo, ao enviar uma solicitação de exclusão de um dado persistente, necessariamente precisará informar os cabeçalhos "X-TenantID" (uma associação entre seu nome de usuário e o nome do seu esquema de dados). Também é necessário que o aplicativo informe o token de acesso ao seu aplicativo (observe que não é o token de acesso ao seu workspace na plataforma Ycodify).
+#### _Successfully return_
 
-#### _Retorno com Sucesso_
-
-A operação, se **sucesso**, retornará HTTP Status 200, sem mensagem!
+The operation, if **successfully**, it will return HTTP 200 and without message!
 
 ```javascript
 HTTP Message without body
 ```
 
-#### _Retorno com Erro_
+#### _Error return_
 
-Se **erro**, o retorno sempre terá este formato:
+If the operation had an **error**, the return will always have this format:
 
 ```javascript
 {
@@ -534,14 +538,14 @@ Se **erro**, o retorno sempre terá este formato:
 }
 ```
 
-**Os possíveis erros são**
+**The possible errors are**
 
 > | Code | Description                                                 |
 > | ---- | ----------------------------------------------------------- |
-> | 400  | **Solicitação malformada**                                  |
-> | 406  | **Conflito** - Objeto já existente                          |
-> | 417  | **Falha na operação** - Motivo imprevisto                   |
-> | 500  | Falha interna da lógica de serviço - **suporte de chamada** |
+> | 400  | **Malformed request**                                       |
+> | 406  | **Conflict** - Object already exist                         |
+> | 417  | **Operation failure** - Unforeseen reason                   |
+> | 500  | Service logic internal failure - **Server error**           |
 
 &nbsp;
 

@@ -16,7 +16,7 @@ After clicking on **Sign up**, you will see a new form to create an user
 
 ![Image](/images/yc-web/createAccount.png)
 
-After fill the form, click on the **Create User** button, and then you will create your user and will acess the system
+After fill the form, click on the **Create User** button, and then you will create your user and will access the system
 
 ## 2. Create a project
 
