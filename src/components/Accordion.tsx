@@ -36,8 +36,8 @@ export function Accordion({
                 {title}
               </span>
               <ChevronUp
-                className={`${
-                  open ? 'rotate-180 transform' : 'rotate-90 transform'
+                className={`transform ${
+                  open ? 'rotate-180' : 'rotate-90'
                 } h-5 w-5 text-slate-900 dark:text-white`}
               />
             </Disclosure.Button>
