@@ -3,6 +3,7 @@ import { Accordion } from './Accordion'
 
 type AccordionGroup = {
   hideSelf?: boolean
+  hideOthers?: boolean
   accordionsData: {
     id: string
     title: string
@@ -13,7 +14,11 @@ type AccordionGroup = {
   }[]
 }
 
-export function AccordionGroup({ accordionsData, hideSelf = false }) {
+export function AccordionGroup({
+  accordionsData,
+  hideSelf = false,
+  hideOthers = false,
+}) {
   const elementsRef = useRef(accordionsData?.map(() => createRef()))
 
   const hideOther = (id) => {
@@ -60,7 +65,7 @@ export function AccordionGroup({ accordionsData, hideSelf = false }) {
               defaultOpen={accordionData.defaultOpen}
               elementRef={elementsRef.current[idx]}
               id={accordionData.id}
-              hideOther={() => hideOther(accordionData.id)}
+              hideOther={() => hideOthers && hideOther(accordionData.id)}
             />
           </div>
         )

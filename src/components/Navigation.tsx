@@ -62,7 +62,7 @@ export function Navigation({ navigation, className }: NavigationProps) {
             })
           })}
 
-          <AccordionGroup accordionsData={accordionsData} hideSelf={true} />
+          <AccordionGroup accordionsData={accordionsData} hideOthers={true} />
         </>
       </ul>
     </nav>

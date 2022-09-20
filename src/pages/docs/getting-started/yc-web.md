@@ -55,6 +55,9 @@ Add all the attributes you want, then when you fill the form, click on the **Cre
 To delete a schema, you need to go back to the dashboard and click on the gear next to the name of the project you want to delete. Then, click on the **Delete schema** button and confirm your action
 
 _**Remember that this action can't be undone!**_
+{% callout type="warning" title="Be aware!" %}
+This action cannot be undone!
+{% /callout %}
 
 ![Image](/images/yc-web/deleteSchema.png)
 ![Image](/images/yc-web/deleteSchema2.png)

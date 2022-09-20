@@ -1,8 +1,5 @@
 ---
-title: Quickstart - Uso da Linguagem YCL
-description: This document presents the YCL language and it's uses. This use implies the definition of data schemas and configurations of the backend services that will operate on the previously defined data schema.
----
-
+title: YCL Language
 ---
 
 The YC language is intended to be used to specify static aspects of data in a business domain, in the context of software applications in information systems. It's raison is be the central concern regarding the use integrated to the YC platform in order to be as simple and intuitive as possible.
@@ -14,8 +11,6 @@ A data specification made with the YC language must be used with the Ycodify pla
 ## 1. Reserved words
 
 The following keywords must not be part of the name of concepts (verbs or nouns) used to describe an application's business domain:
-
-
 
 - **schema**: this word must be used to declare the existence of a data schema, in which all system specification must be contained.
 - **entity**: word that should be used to declare in a _schema_ the concepts (nouns and verbs) that synthesize data in a business domain.
@@ -227,7 +222,6 @@ In this case, only users who are associated with the 'ROLE*ADMIN' role have auth
 
 > **Important**: Every user role name must be in capital letters and start with 'ROLE\_'. The role 'ROLE_ADMIN' is necessarily already defined with the permissions for reading and writing data, even if it is not declared.
 
-
 ```java
  1.  schema biblioteca {
  3.    entity livro (
@@ -255,6 +249,5 @@ By default, if this reserved word is not declared as an attribute definition, th
 ### 4.9. Reserved word: _nullable_
 
 The reserved word **nullable**, in turn, must be used in parentheses in the declaration of any attribute (see Code 2, lines 37 and 58). Its use informs that such an attribute that declares it must accept as a value, if necessary, including the null value. That is, it is possible to persist data instances of a given entity without having values ​​associated with that attribute.
-
 
 By default, every attribute is assumed to be declared **nullable**.

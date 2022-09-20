@@ -1,8 +1,5 @@
 ---
-title: Quickstart - Consuming backend services for a data schema
-description: With this document you will know how to consume the backend services to a data schema, starting for the **Create** operation, created and maintained through what is presented in 1. Quickstart - Creation of an account and creation of data schema
----
-
+title: Consuming Backend Services
 ---
 
 The following are examples of using the Ycodify platform backend service endpoints for your application.
@@ -70,8 +67,8 @@ Service logic internal failure - **Server error**).
 
 ### 1.2. For log in
 
-
 After you have an registered service account, you will need to authenticate to access your workspace, and then you can create and maintain your models. See how to do this:
+
 #### _Request [by curl]_
 
 ```shell
@@ -115,7 +112,7 @@ If the operation had an **error**, the return will ve HTTP Status 400, with this
 
 ### 1.3. Get account data
 
-Now you've got an **token** (the `access_token` above) that identifies you in the platform, you can use it to 
+Now you've got an **token** (the `access_token` above) that identifies you in the platform, you can use it to
 request services and information from the platform. _Of course_, information that pertains to your workspace, your applications. For example, you can query your account profile data with:
 
 #### Request [by curl]
@@ -249,7 +246,6 @@ Here you will find information about how to consume our backend services for you
 
 Now that you have an account and a defined data schema, to create new data and keep it in your application database you should use the following endpoint as follows:
 
-
 #### _Request [by curl]_
 
 ```shell
@@ -285,14 +281,14 @@ The operation, if **successfully**, it will return HTTP 201 and the message belo
 
 **Important**: the object class defined as _armor_, has more attributes than the created ones. The Ycodify platform creates, for each defined class, six other attributes definitions. And they are:
 
-> | Field     | Description                                                                            |
-> | --------- | -------------------------------------------------------------------------------------- |
-> | id        | Unique identifier for this object and it's value space                                 |
-> | user      | User name that has requested the backend operation                                     |
-> | role      | Identifies which _role_ this user belongs to                                           |
-> | createdat | Indicates the date this data was first persisted in the database                       |
-> | updatedat | Informs the last update operation of this data in the base                             |
-> | version   | It can be used to perform concurrency control                                             |
+> | Field     | Description                                                      |
+> | --------- | ---------------------------------------------------------------- |
+> | id        | Unique identifier for this object and it's value space           |
+> | user      | User name that has requested the backend operation               |
+> | role      | Identifies which _role_ this user belongs to                     |
+> | createdat | Indicates the date this data was first persisted in the database |
+> | updatedat | Informs the last update operation of this data in the base       |
+> | version   | It can be used to perform concurrency control                    |
 
 All of this six attribute are exclusive controlled by the platform, the user has no control about it's values.
 
@@ -311,19 +307,18 @@ If the operation had an **error**, the return will always have this format:
 
 **The possible errors are**
 
-> | Code | Description                                                 |
-> | ---- | ----------------------------------------------------------- |
-> | 400  | **Malformed request**                                       |
-> | 406  | **Conflict** - Object already exists                        |
-> | 417  | **Operation failure** - Unforeseen reason                   |
-> | 500  | Service logic internal failure - **Server error**           |
+> | Code | Description                                       |
+> | ---- | ------------------------------------------------- |
+> | 400  | **Malformed request**                             |
+> | 406  | **Conflict** - Object already exists              |
+> | 417  | **Operation failure** - Unforeseen reason         |
+> | 500  | Service logic internal failure - **Server error** |
 
 &nbsp;
 
 ### 2.2. Get persisted _Objects_
 
 There's two ways to request a data read. The first one describes how to get an unique object, based on your `id` attribute. The second one involves retrieving an instance list of data based on the use of filters. The next two subsections will show this.
-
 
 #### 2.2.1. Get a persistence _Object_
 
@@ -377,12 +372,12 @@ If the operation had an **error**, the return will always have this format:
 
 **The possible errors are**
 
-> | Code | Description                                                 |
-> | ---- | ----------------------------------------------------------- |
-> | 400  | **Malformed request**                                       |
-> | 406  | **Conflict** - Object already exists                        |
-> | 417  | **Operation failure** - Unforeseen reason                   |
-> | 500  | Service logic internal failure - **Server error**           |
+> | Code | Description                                       |
+> | ---- | ------------------------------------------------- |
+> | 400  | **Malformed request**                             |
+> | 406  | **Conflict** - Object already exists              |
+> | 417  | **Operation failure** - Unforeseen reason         |
+> | 500  | Service logic internal failure - **Server error** |
 
 #### 2.2.2. Get a list of persistence _Objects_
 
@@ -440,12 +435,12 @@ If the operation had an **error**, the return will always have this format:
 
 **The possible errors are**
 
-> | Code | Description                                                 |
-> | ---- | ----------------------------------------------------------- |
-> | 400  | **Malformed request**                                       |
-> | 406  | **Conflict** - Object already exists                        |
-> | 417  | **Operation failure** - Unforeseen reason                   |
-> | 500  | Service logic internal failure - **Server error**           |
+> | Code | Description                                       |
+> | ---- | ------------------------------------------------- |
+> | 400  | **Malformed request**                             |
+> | 406  | **Conflict** - Object already exists              |
+> | 417  | **Operation failure** - Unforeseen reason         |
+> | 500  | Service logic internal failure - **Server error** |
 
 &nbsp;
 
@@ -498,7 +493,7 @@ The _HTTP Status_ errors types: 400 (**Malformed request**); 404 (Data **Not fou
 
 ### 2.4. Delete a persisted _Object_
 
-You can delete a persisted _Object as follows:
+You can delete a persisted \_Object as follows:
 
 #### _Request [by curl]_
 
@@ -515,6 +510,7 @@ $ curl -i -X POST \
     } \
   }'  https://api.Ycodify.com/api/v0/interpreter-p/s
 ```
+
 Your application, when sending a request to delete persistent data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
 
 #### _Successfully return_
@@ -540,12 +536,12 @@ If the operation had an **error**, the return will always have this format:
 
 **The possible errors are**
 
-> | Code | Description                                                 |
-> | ---- | ----------------------------------------------------------- |
-> | 400  | **Malformed request**                                       |
-> | 406  | **Conflict** - Object already exist                         |
-> | 417  | **Operation failure** - Unforeseen reason                   |
-> | 500  | Service logic internal failure - **Server error**           |
+> | Code | Description                                       |
+> | ---- | ------------------------------------------------- |
+> | 400  | **Malformed request**                             |
+> | 406  | **Conflict** - Object already exist               |
+> | 417  | **Operation failure** - Unforeseen reason         |
+> | 500  | Service logic internal failure - **Server error** |
 
 &nbsp;
 

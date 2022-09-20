@@ -32,12 +32,12 @@ export function Accordion({
                 if (hideOther) hideOther()
               }}
             >
-              <span className="text-sm font-medium font-display text-slate-900 dark:text-white">
+              <span className="font-display text-sm font-medium text-slate-900 dark:text-white">
                 {title}
               </span>
               <ChevronUp
                 className={`${
-                  open ? 'rotate-180 transform' : ''
+                  open ? 'rotate-180 transform' : 'rotate-90 transform'
                 } h-5 w-5 text-slate-900 dark:text-white`}
               />
             </Disclosure.Button>

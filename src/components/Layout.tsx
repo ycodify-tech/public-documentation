@@ -174,7 +174,7 @@ export function Layout({
     <>
       <Header navigation={navigation} />
 
-      {!dismissed && <Hero />}
+      {!dismissed && isHomePage && <Hero />}
 
       <div className="dark:dark-scrollbar"></div>
 

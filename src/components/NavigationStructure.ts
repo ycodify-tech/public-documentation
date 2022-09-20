@@ -1,100 +1,57 @@
 export const NavigationStructure = [
   {
-    title: 'Introdução',
-    links: [{ title: 'Iniciando', href: '/' }],
-  },
-  {
     title: 'Getting started',
     links: [
-      { title: 'Quickstart com Yc Web', href: '/docs/getting-started/yc-web' },
-      { title: 'Quickstart com Yc CLI', href: '/docs/getting-started/yc-cli' },
+      { title: 'Introduction', href: '/' },
       { title: 'How it works', href: '/docs/getting-started/how-it-works' },
-    ],
-  },
-  {
-    title: 'Schema',
-    links: [{ title: 'Relationships', href: '/docs/schema/relationships' }],
-  },
-  {
-    title: 'Operations',
-    links: [
-      { title: 'Insert', href: '/docs/operations/insert' },
-      { title: 'Select', href: '/docs/operations/select' },
-      { title: 'Update', href: '/docs/operations/update' },
-      { title: 'Delete', href: '/docs/operations/delete' },
-    ],
-  },
-  {
-    title: 'Authentication & Authorization',
-    links: [
-      {
-        title: 'Authentication & Authorization',
-        href: '/docs/authentication-authorization',
-      },
-    ],
-  },
-  {
-    title: 'Security',
-    links: [{ title: 'Security', href: '/docs/security' }],
-  },
-  {
-    title: 'Ycodify CLI',
-    links: [{ title: 'Ycodify CLI', href: '/docs/ycodify-cli' }],
-  },
-  {
-    title: 'Project & Collaborators',
-    links: [
-      { title: 'Project & Collaborators', href: '/docs/project-collaborators' },
+      { title: 'Glossary', href: '/docs/getting-started/glossary' },
     ],
   },
   {
     title: 'Account Management',
-    links: [{ title: 'Account Management', href: '/docs/account-management' }],
-  },
-  {
-    title: 'Guides / Tutorials / Resources',
     links: [
       {
-        title: 'Consumindo Serviços de Backend para um Schema de Dados',
-        href: '/docs/guides-tutorials-resources/consumindo-servicos',
+        title: 'Create an Account',
+        href: '/docs/account-management/create-account',
       },
       {
-        title: 'Uso da Linguagem YCL',
-        href: '/docs/guides-tutorials-resources/linguagem-ycl',
+        title: 'Payment Methods',
+        href: '/docs/account-management/payment-methods',
+      },
+      { title: 'Projects', href: '/docs/account-management/projects' },
+    ],
+  },
+  {
+    title: 'Project / Schema',
+    links: [
+      {
+        title: 'Create and Deleting a Schema',
+        href: '/docs/project-schema/create-delete-schema',
+      },
+      { title: 'Entities', href: '/docs/project-schema/entities' },
+      { title: 'Actions', href: '/docs/project-schema/actions' },
+      { title: 'Associations', href: '/docs/project-schema/associations' },
+      {
+        title: 'Authorization & Authentication',
+        href: '/docs/project-schema/authorization-authentication',
       },
     ],
   },
   {
-    title: 'Ycodify Api Explorer',
+    title: 'Guides',
     links: [
       {
-        title: 'Interpreter Api',
-        href: '/docs/ycodify-api-explorer/interpreter-api',
+        title: 'Consuming Backend Services',
+        href: '/docs/guides/consuming-services',
       },
-    ],
-  },
-  {
-    title: 'Troubleshooting',
-    links: [{ title: 'Troubleshooting', href: '/docs/troubleshooting' }],
-  },
-  {
-    title: 'FAQs',
-    links: [{ title: 'FAQs', href: '/docs/faqs' }],
-  },
-  {
-    title: 'Glossary',
-    links: [{ title: 'Glossary', href: '/docs/glossary' }],
-  },
-  {
-    title: 'Referência',
-    links: [
+      { title: 'YCL Language', href: '/docs/guides/ycl-language' },
       {
-        title: 'Serviço de modelagem',
-        href: '/docs/referencia/servico-modelagem',
+        title: 'Using Exported Code',
+        href: '/docs/guides/using-exported-code',
       },
       {
-        title: 'Serviço de persistência',
-        href: '/docs/referencia/servico-persistencia',
+        title: 'Ycodify Web',
+        href: '/docs/guides/yc-web',
       },
     ],
   },
