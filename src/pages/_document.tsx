@@ -48,7 +48,7 @@ const themeScript = `
   }).observe(document.documentElement, { attributeFilter: ['data-theme'], attributeOldValue: true })
 
   mediaQuery.addEventListener('change', updateThemeWithoutTransitions)
-  window.addEventListener('storage', updateThemeWithoutTransitions)
+  window.addEventListener('storage', e => updateThemeWithoutTransitions)
 `
 
 export default function Document() {
