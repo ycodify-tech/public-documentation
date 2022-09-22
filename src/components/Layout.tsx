@@ -53,19 +53,19 @@ function Header({ navigation }: HeaderProps) {
           : 'dark:bg-transparent'
       )}
     >
-      <div className="flex mr-6 lg:hidden">
+      <div className="mr-6 flex lg:hidden">
         <MobileNavigation navigation={navigation} />
       </div>
-      <div className="relative flex items-center flex-grow basis-0">
+      <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <Logo className="hidden w-auto h-9 md:block" />
+          <Logo className="hidden h-9 w-auto md:block" />
           <Logomark className="block w-[33px] md:hidden" />
         </Link>
       </div>
-      <div className="mr-6 -my-5 sm:mr-8 md:mr-0">
+      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         <Search />
       </div>
-      <div className="relative flex justify-end gap-6 basis-0 sm:gap-8 md:flex-grow">
+      <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
         <Link
           href="https://github.com/ycodify-tech/documentation"
@@ -74,7 +74,7 @@ function Header({ navigation }: HeaderProps) {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <GitHubIcon className="w-6 h-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
+          <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
       </div>
     </header>
@@ -94,7 +94,9 @@ function useTableOfContents(tableOfContents: { id: string }[]) {
         let style = window.getComputedStyle(el)
         let scrollMt = parseFloat(style.scrollMarginTop)
 
-        let top = window.scrollY + el.getBoundingClientRect().top - scrollMt
+        let top = Math.floor(
+          window.scrollY + el.getBoundingClientRect().top - scrollMt
+        )
         return { id, top }
       })
   }, [])
@@ -178,7 +180,7 @@ export function Layout({
 
       <div className="dark:dark-scrollbar"></div>
 
-      <div className="relative flex justify-center mx-auto sm:px-2 lg:px-8 xl:px-12">
+      <div className="relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
           <div className="sticky top-[4.5rem] my-16 h-[calc(100vh-4.5rem)] overflow-x-hidden overflow-y-scroll">
@@ -188,17 +190,17 @@ export function Layout({
             />
           </div>
         </div>
-        <div className="flex-auto max-w-2xl min-w-0 px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
-              <header className="space-y-1 mb-9">
+              <header className="mb-9 space-y-1">
                 {section && (
-                  <p className="text-sm font-medium font-display text-sky-500">
+                  <p className="font-display text-sm font-medium text-sky-500">
                     {section.title}
                   </p>
                 )}
                 {title && (
-                  <h1 className="text-3xl tracking-tight font-display text-slate-900 dark:text-white">
+                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
                     {title}
                   </h1>
                 )}
@@ -206,10 +208,10 @@ export function Layout({
             )}
             <Prose>{children}</Prose>
           </article>
-          <dl className="flex pt-6 mt-12 border-t border-slate-200 dark:border-slate-800">
+          <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
             {previousPage && (
               <div>
-                <dt className="text-sm font-medium font-display text-slate-900 dark:text-white">
+                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
                   Previous
                 </dt>
                 <dd className="mt-1">
@@ -224,7 +226,7 @@ export function Layout({
             )}
             {nextPage && (
               <div className="ml-auto text-right">
-                <dt className="text-sm font-medium font-display text-slate-900 dark:text-white">
+                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
                   Next
                 </dt>
                 <dd className="mt-1">
@@ -248,7 +250,7 @@ export function Layout({
               <>
                 <h2
                   id="on-this-page-title"
-                  className="text-sm font-medium font-display text-slate-900 dark:text-white"
+                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
                 >
                   On this page
                 </h2>
@@ -270,7 +272,7 @@ export function Layout({
                       {section.children.length > 0 && (
                         <ol
                           role="list"
-                          className="pl-5 mt-2 space-y-3 text-slate-500 dark:text-slate-400"
+                          className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400"
                         >
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>

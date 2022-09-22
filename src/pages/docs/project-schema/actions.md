@@ -14,8 +14,7 @@ Go to **Data Manager** > **entity** (in this case, **livros**) and select the op
 
 ![Image](/images/yc-web/read.png)
 
-And you can see the data in the table format. To do this, click on table button in lower right corner of the console response
-Você pode ver os dados em formato de tabela. Para isso, clique no botão de tabela no  da resposta do console
+You can also see the data in the table format. To do this, click on table button in lower right corner of the console response
 
 ![Image](/images/yc-web/read2.png)
 ![Image](/images/yc-web/read3.png)
@@ -26,7 +25,7 @@ To filter the results, you need to specify in the object the fields you want to 
 
 ![Image](/images/yc-web/read6.png)
 
->For fields of **STRING** or **TEXT** type, it is possible to use the **LIKE** operator to search for part of the text, you just need to add the **%** symbol before and after the text you want to search
+> For fields of **STRING** or **TEXT** type, it is possible to use the **LIKE** operator to search for part of the text, you just need to add the **%** symbol before and after the text you want to search
 
 ### 2.2 Request code in JavaScript
 
@@ -42,6 +41,7 @@ Go to **Data Manager** > **entity** (in this case, **livros**) and select the op
 ![Image](/images/yc-web/insert1.png)
 
 Then, with all the fields selected, fill the fields with the values you want and click on the play button. In the case of our entity, we filled the fields with following format:
+
 ```
 "livros": {
   "genero": "Romance",
@@ -51,7 +51,6 @@ Then, with all the fields selected, fill the fields with the values you want and
 ```
 
 When perfoming the operation, the response will be at the right side of console
-Ao executar a operação, a resposta estará no lado direito do console
 
 ![Image](/images/yc-web/insert2.png)
 

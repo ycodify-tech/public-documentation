@@ -38,6 +38,8 @@ The list of _symbols_ to use in defining any data schema, when needed (the comma
 
 Before proceeding, we point out that for the examples presented we took a small _business data domain_ like a _library_. Next, in Figure 1, the domain concepts and the relationships between these concepts are presented in a UML Class Diagram.
 
+#### Figure 1
+
 ```mermaid
 classDiagram
       livro "1".."1..*" copia
@@ -59,9 +61,9 @@ classDiagram
       }
 ```
 
-<p align="center">|Figure 1|</p>
-
 The UML Class Diagram represented in Figure 1 can be written with YC as follows:
+
+#### Code 1
 
 ```java
  1.  schema biblioteca {
@@ -93,8 +95,6 @@ The UML Class Diagram represented in Figure 1 can be written with YC as follows:
 27.  }
 ```
 
-<p align="center">|Code 1|</p>
-
 The above script, present in Code 1, is a poor script that relies on using default values/instructions for configuring the platform backend service for a software application. In terms of expressiveness, we can have this schema in Code 1 enriched, as represented in Code 2.
 
 ### 4.1. Declaration of _schema_, _entity_ and attributes
@@ -114,6 +114,8 @@ Like the **schema** object, the **entity** object also defines default values/in
 Every attribute has a canonical data type associated with it (either _String_, _Integer_, _Long_, _Boolean_, _Double_, _Timestamp_). If the data type of an attribute is not explicitly defined (for example, see the attribute defined in line 16 in Code 2), it will be considered to be of type **String**, and this one with a length of up to **64** characters.
 
 If a type specification other than the standard is required, the user can define the attribute type in parentheses (lines 30 and 36 in Code 2, for example). If the type is not distinct, ie **String**, the length can also be adjusted just by suffixing the length to the reserved word (see line 12 in Code 2).
+
+#### Code 2
 
 ```java
  1.  schema biblioteca (
@@ -184,8 +186,6 @@ If a type specification other than the standard is required, the user can define
 66.  }
 ```
 
-<p align="center">|Code 2|</p>
-
 ### 4.3. Reserved word: _enable_
 
 In Code 2, what is involved in parentheses, open on the first line, right after the definition of the name of the **schema**, is the information that the situation of this schema with the Ycodify platform is that this _not_ must be consumed for the purpose of operating the platform's backend services. Commonly, this situation is desired in cases where it is desired to make changes to the specification of any element of the data schema, or to create new elements. Otherwise, the declaration will have the operator **!** removed, and will start to inform the opposite demand.
@@ -222,6 +222,8 @@ In this case, only users who are associated with the 'ROLE*ADMIN' role have auth
 
 > **Important**: Every user role name must be in capital letters and start with 'ROLE\_'. The role 'ROLE_ADMIN' is necessarily already defined with the permissions for reading and writing data, even if it is not declared.
 
+#### Code 3
+
 ```java
  1.  schema biblioteca {
  3.    entity livro (
@@ -237,8 +239,6 @@ In this case, only users who are associated with the 'ROLE*ADMIN' role have auth
 13      // declaração de atributos
 14.    }
 ```
-
-<p align="center">|Code 3|</p>
 
 ### 4.8. Reserved word: _unique_
 

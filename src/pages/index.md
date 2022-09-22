@@ -3,6 +3,8 @@ title: Introduction
 pageTitle: Ycodify Docs
 ---
 
+Aqui você encontrará um sumário da documentação da plataforma Ycodify, suas referências, finaliades e guias.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sapien sit amet nulla blandit, id iaculis purus porta. Ut id fermentum tortor. Vestibulum congue sapien ipsum, sit amet fringilla libero sodales condimentum. Suspendisse congue odio augue, placerat molestie felis dapibus quis. Proin tincidunt pellentesque ligula, vel semper ligula. Quisque ac diam nec mi tincidunt euismod eget ullamcorper purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis tortor tortor, non tincidunt erat luctus id. Nulla tempus urna nec fermentum pretium.
 
 Cras et interdum lacus. Vestibulum tincidunt neque lacinia malesuada fringilla. Vestibulum libero lectus, pharetra non convallis nec, maximus ultrices dolor. Duis ac mi euismod, ullamcorper massa ut, porttitor quam. Praesent malesuada, ipsum at varius condimentum, orci ipsum venenatis felis, et hendrerit odio felis vel eros. Vivamus sit amet ultrices urna, nec condimentum eros. Aliquam erat volutpat.

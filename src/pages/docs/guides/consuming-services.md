@@ -24,7 +24,7 @@ $ curl -i -X POST \
     "email":"tony@stark.com", \
     "status":1, \
     "roles":[{ "name":"ROLE_ADMIN" }]
-  }' https://api.Ycodify.com/api/caccount-mngr/account
+  }' https://api.ycodify.com/api/caccount-mngr/account
 ```
 
 #### Success return:
@@ -75,7 +75,7 @@ After you have an registered service account, you will need to authenticate to a
 $ curl -i -X POST \
   -u "frontend:13579" \
   -d "username=stark@mark&password=12345&grant_type=password" \
-  https://api.Ycodify.com/api/csecurity/oauth/token
+  https://api.ycodify.com/api/csecurity/oauth/token
 ```
 
 #### _Successfully return_
@@ -118,16 +118,16 @@ request services and information from the platform. _Of course_, information tha
 #### Request [by curl]
 
 ```shell
-$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.Ycodify.com/api/caccount-mngr/account/username/tony
+$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.ycodify.com/api/caccount-mngr/account/username/tony
 ```
 
 #### Request [by curl]
 
 ```shell
-$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.Ycodify.com/api/caccount-mngr/account
+$ curl -i -X GET -H "X-TenantID: stark@mark" -H "Authorization: Bearer <access_token>" https://api.ycodify.com/api/caccount-mngr/account
 ```
 
-> It's **important** <font color="red">only app admin user</font> is allowed to make request to this terminal.
+> It's **important** only app admin user is allowed to make request to this terminal.
 
 #### _Successfully return_
 
@@ -196,12 +196,12 @@ $ curl -i -X PUT \
     "status":1, \
     "name":"tony stark", \
     "roles":[{ "name":"ROLE_ADMIN" }] \
-   }' https://api.Ycodify.com/api/client-account-mngr/account/tony/version/0
+   }' https://api.ycodify.com/api/client-account-mngr/account/tony/version/0
 ```
 
 > It's **important** to see the attribute `version`. Its value must be retrieved from the one defined in subsection **1.2**
 
-> **If you want to <font color=red>desativate</font> a client account**, send the same request as above with the attribute `status` with value **0**.
+> **If you want to deactivate a client account**, send the same request as above with the attribute `status` with value **0**.
 
 #### _Successfully return_
 
@@ -336,7 +336,7 @@ $ curl -i -X POST \
     "armor": { \
       "id": 1 \
     } \
-  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
+  }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
 Your application, must send a exclusion request of a persisted data, necessarily need to inform the headers "X-TenantID" (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform)
@@ -397,7 +397,7 @@ $ curl -i -X POST \
         "IN": ["Mark I","Mark II"]
       }
     } \
-  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
+  }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
 Your application, when sending a request for retrieval of persistent data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
@@ -461,7 +461,7 @@ $ curl -i -X POST \
       "id": 1, \
       "name": "Mark I" \
     } \
-  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
+  }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
 Your application, when sending a persistence request to update data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
@@ -508,7 +508,7 @@ $ curl -i -X POST \
       "classUID": "armor", \
       "id": 1 \
     } \
-  }'  https://api.Ycodify.com/api/v0/interpreter-p/s
+  }'  https://api.ycodify.com/api/v0/interpreter-p/s
 ```
 
 Your application, when sending a request to delete persistent data, will necessarily need to inform the "X-TenantID" headers (an association between your username and the name of your data schema). It is also necessary for the app to provide the access token to your app (note that it is not the access token to your workspace on the Ycodify platform).
