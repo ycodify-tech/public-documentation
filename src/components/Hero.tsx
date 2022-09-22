@@ -71,21 +71,21 @@ export function Hero() {
             />
             <div className="relative">
               <p className="inline bg-gradient-to-r from-indigo-400 via-sky-600 to-indigo-400 bg-clip-text font-display text-4xl tracking-tight text-transparent dark:from-indigo-200 dark:via-sky-400 dark:to-indigo-200">
-                Desenvolva software mais rápido.
+                Develop your software faster.
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-600 dark:text-slate-400">
-                Reduza significativamente os esforços de codificação, testes,
-                implantação e evolução de um software. Entregue seus produtos de
-                software em prazos até 60% mais curtos, reduzindo os custos de
-                produção, operação e manutenção de software.
+                Reduce significantly the efforts of coding, testing, deployment
+                and evolution of a software. Deliver your software products in
+                up to 60% shorter timeframes, reducing the costs of software
+                production, operation and maintenance.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="https://ycodify.com/register">Experimente</Button>
+                <Button href="https://ycodify.com/register">Try out</Button>
                 <Button
                   href="https://github.com/ycodify-tech/documentation"
                   variant="secondary"
                 >
-                  Ver no GitHub
+                  See on GitHub
                 </Button>
               </div>
             </div>
