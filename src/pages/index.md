@@ -3,8 +3,6 @@ title: Introduction
 pageTitle: Ycodify Docs
 ---
 
-{% codemirror code="teste kdosakd kdsoakdpakdpak dksoapkdos dkoaskdapkd s" /%}
-
 {% hero /%}
 
 Here you will find a summary of the Ycode platform, references, purposes and guides.

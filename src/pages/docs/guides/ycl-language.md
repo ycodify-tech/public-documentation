@@ -65,35 +65,7 @@ The UML Class Diagram represented in Figure 1 can be written with YC as follows:
 
 #### Code 1
 
-```java
- 1.  schema biblioteca {
- 2.    entity livro {
- 3.      titulo
- 4.      isbn
- 5.    }
- 6.    entity copia {
- 7.      copiaid
- 8.      livro (
- 9.        livro
-10.      )
-11.      emprestadoa
-12.      emprestadoem
-13.      devolvidoem
-14.    }
-15.    entity historico {
-16.      copia (
-17.        copia
-18.      )
-19.      emprestadoa
-20.      emprestadoem (
-21.        Long
-22.      )
-23.      devolvidoem (
-24.        Long
-25.      )
-26.    }
-27.  }
-```
+{% codemirror code="schema library {-n  entity book {-n    title-n    isbn-n  }-n  entity copy {-n    copyid-n    book (-n      book-n    )-n    loanedto-n    loanedin-n    returnedin-n  }-n  entity history {-n    copy (-n      copy-n    )-n    loanedto-n    loanedin (-n      Long-n    )-n    returnedin (-n      Long-n    )-n  }-n}" /%}
 
 The above script, present in Code 1, is a poor script that relies on using default values/instructions for configuring the platform backend service for a software application. In terms of expressiveness, we can have this schema in Code 1 enriched, as represented in Code 2.
 
@@ -117,74 +89,7 @@ If a type specification other than the standard is required, the user can define
 
 #### Code 2
 
-```java
- 1.  schema biblioteca (
- 2.    !enable
- 3.  ) {
- 4.    entity livro {
- 5.      titulo (
- 6.        !nullable
- 7.      )
- 8.      autor (
- 9.        !nullable
-10.      )
-11.      isbn (
-12.        String 128
-13.        !nullable
-14.        unique
-15.      )
-16.      editora
-17.    }
-18.    entity copia (
-19.      concurrencyControl
-20.      persistence (
-21.        uniqueKey [
-22.          id, livro
-23.        ]
-24.      )
-25.    ) {
-26.      copiaid (
-27.        !nullable
-28.      )
-29.      de (
-30.        livro
-31.      )
-32.      emprestadoa (
-33.        !nullable
-34.      )
-35.      emprestadoem (
-36.        Long
-37.        !nullable
-38.      )
-39.      devolvidoem (
-40.        Long
-41.      )
-42.    }
-43.    entity historico (
-44.      businessRule
-45.      persistence (
-46.        indexKey [
-47.          emprestada, emprestadoem
-48.        ]
-49.      )
-50.    ) {
-51.      copia (
-52.        copia
-53.      )
-54.      emprestadoa (
-55.        !nullable
-56.      )
-57.      emprestadoem (
-58.        Long
-59.        !nullable
-60.      )
-61.      devolvidoem (
-62.        Long
-63.        !nullable
-64.      )
-65.    }
-66.  }
-```
+{% codemirror code="schema library (-n  !enable-n) {-n  entity book {-n    title (-n      !nullable-n    )-n    author (-n      !nullable-n    )-n    isbn (-n      String 128-n      !nullable-n      unique-n    )-n    publisher-n  }-n  entity copy (-n    concurrencyControl-n    persistence (-n      uniqueKey [-n        id, livro-n      ]-n    )-n  ) {-n    copyid (-n      !nullable-n    )-n    from (-n      book-n    )-n    loanedto (-n      !nullable-n    )-n    loanedin (-n      Long-n      !nullable-n    )-n    returnedin (-n      Long-n    )-n  }-n  entity history (-n    businessRule-n    persistence (-n      indexKey [-n        loaned, loanedin-n      ]-n    )-n  ) {-n    copy (-n      copy-n    )-n    loanedto (-n      !nullable-n    )-n    loanedin (-n      Long-n      !nullable-n    )-n    returnedin (-n      Long-n      !nullable-n    )-n  }-n}" /%}
 
 ### 4.3. Reserved word: _enable_
 
@@ -224,21 +129,7 @@ In this case, only users who are associated with the 'ROLE*ADMIN' role have auth
 
 #### Code 3
 
-```java
- 1.  schema biblioteca {
- 3.    entity livro (
- 4.      accessControl (
- 5.        read [
- 6.          ROLE_PUBLIC,ROLE_ADMIN
- 7.        ]
- 8.        write [
- 9.          ROLE_ADMIN
-10.        ]
-11.      )
-12.    ) {
-13      // declaração de atributos
-14.    }
-```
+{% codemirror code="schema library {-n  entity book (-n    accessControl (-n      read [-n        ROLE_PUBLIC, ROLE_ADMIN-n      ]-n      write [-n        ROLE_ADMIN-n      ]-n    )-n  ) {-n    // attribute declaration-n  }" /%}
 
 ### 4.8. Reserved word: _unique_
 
