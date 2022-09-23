@@ -1,5 +1,7 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { Hero } from '@/components/Hero'
+import { Code } from '@/components/Code'
 
 const tags = {
   callout: {
@@ -41,6 +43,16 @@ const tags = {
       icon: { type: String },
       href: { type: String },
     },
+  },
+  hero: {
+    render: Hero,
+  },
+  codemirror: {
+    selfClosing: true,
+    attributes: {
+      code: { type: String },
+    },
+    render: Code,
   },
 }
 

@@ -143,7 +143,6 @@ export function Layout({
   }[]
 }) {
   let router = useRouter()
-  let isHomePage = router.pathname === '/'
   let allLinks = navigation.flatMap((section) => section.links)
   let linkIndex = allLinks.findIndex((link) => link.href === router.pathname)
   let previousPage = allLinks[linkIndex - 1]
@@ -152,7 +151,6 @@ export function Layout({
     section.links.find((link) => link.href === router.pathname)
   )
   let currentSection = useTableOfContents(tableOfContents)
-  const [dismissed, setDismissed] = useState(false)
 
   function isActive(section) {
     if (section.id === currentSection) {
@@ -164,19 +162,9 @@ export function Layout({
     return section.children.findIndex(isActive) > -1
   }
 
-  useEffect(() => {
-    window.onstorage = function () {
-      setDismissed(window.sessionStorage.getItem('hero') === 'dismissed')
-    }
-
-    setDismissed(window.sessionStorage.getItem('hero') === 'dismissed')
-  }, [])
-
   return (
     <>
       <Header navigation={navigation} />
-
-      {!dismissed && isHomePage && <Hero />}
 
       <div className="dark:dark-scrollbar"></div>
 
