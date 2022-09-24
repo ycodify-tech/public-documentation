@@ -2,7 +2,7 @@
 title: Associations
 ---
 
-## 1. Creating associations in yout schema
+## 1. Creating associations in your schema
 
 To do this, we will create a new entity called **clientes** and we will associate it with the entity **livros**
 
