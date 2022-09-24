@@ -305,14 +305,12 @@ If the operation had an **error**, the return will always have this format:
 }
 ```
 
-**The possible errors are**
+#### The possible errors are:
 
-> | Code | Description                                       |
-> | ---- | ------------------------------------------------- |
-> | 400  | **Malformed request**                             |
-> | 406  | **Conflict** - Object already exists              |
-> | 417  | **Operation failure** - Unforeseen reason         |
-> | 500  | Service logic internal failure - **Server error** |
+- 400 (**Malformed request**)
+- 406 (**Conflict** - Object already exists)
+- 417 (**Operation failure** - Unforeseen reason)
+- 500 (Service logic internal failure - **Server error**)
 
 &nbsp;
 
@@ -370,14 +368,12 @@ If the operation had an **error**, the return will always have this format:
 }
 ```
 
-**The possible errors are**
+#### The possible errors are:
 
-> | Code | Description                                       |
-> | ---- | ------------------------------------------------- |
-> | 400  | **Malformed request**                             |
-> | 406  | **Conflict** - Object already exists              |
-> | 417  | **Operation failure** - Unforeseen reason         |
-> | 500  | Service logic internal failure - **Server error** |
+- 400 (**Malformed request**)
+- 406 (**Conflict** - Object already exists)
+- 417 (**Operation failure** - Unforeseen reason)
+- 500 (Service logic internal failure - **Server error**)
 
 #### 2.2.2. Get a list of persistence _Objects_
 
@@ -433,14 +429,12 @@ If the operation had an **error**, the return will always have this format:
 }
 ```
 
-**The possible errors are**
+#### The possible errors are:
 
-> | Code | Description                                       |
-> | ---- | ------------------------------------------------- |
-> | 400  | **Malformed request**                             |
-> | 406  | **Conflict** - Object already exists              |
-> | 417  | **Operation failure** - Unforeseen reason         |
-> | 500  | Service logic internal failure - **Server error** |
+- 400 (**Malformed request**)
+- 406 (**Conflict** - Object already exists)
+- 417 (**Operation failure** - Unforeseen reason)
+- 500 (Service logic internal failure - **Server error**)
 
 &nbsp;
 
@@ -487,7 +481,13 @@ If the operation had an **error**, the return will always have this format:
 }
 ```
 
-The _HTTP Status_ errors types: 400 (**Malformed request**); 404 (Data **Not found**); 406 (**Conflict** - Object already exists); 417 (**Operation failure** - Unforeseen reason); 500 (Service logic internal failure - **Server error**).
+The _HTTP Status_ errors types:
+
+- 400 (**Malformed request**)
+- 404 (Data **Not found**)
+- 406 (**Conflict** - Object already exists)
+- 417 (**Operation failure** - Unforeseen reason)
+- 500 (Service logic internal failure - **Server error**)
 
 &nbsp;
 
@@ -534,14 +534,12 @@ If the operation had an **error**, the return will always have this format:
 }
 ```
 
-**The possible errors are**
+#### The possible errors are:
 
-> | Code | Description                                       |
-> | ---- | ------------------------------------------------- |
-> | 400  | **Malformed request**                             |
-> | 406  | **Conflict** - Object already exist               |
-> | 417  | **Operation failure** - Unforeseen reason         |
-> | 500  | Service logic internal failure - **Server error** |
+- 400 (**Malformed request**)
+- 406 (**Conflict** - Object already exists)
+- 417 (**Operation failure** - Unforeseen reason)
+- 500 (Service logic internal failure - **Server error**)
 
 &nbsp;
 

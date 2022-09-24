@@ -1,4 +1,5 @@
 import CodeMirror from '@uiw/react-codemirror'
+import { EditorView } from '@codemirror/view'
 import { dracula } from '@uiw/codemirror-theme-dracula'
 
 import * as ThemeContext from '@/contexts/ThemeContext'
@@ -20,6 +21,7 @@ export function Code({ code, language }: CodeProps) {
       value={codeString}
       theme={isDark ? dracula : 'light'}
       readOnly={true}
+      extensions={[EditorView.lineWrapping]}
     />
   )
 }
