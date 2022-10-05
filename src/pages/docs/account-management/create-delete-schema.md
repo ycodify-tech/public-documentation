@@ -8,17 +8,17 @@ In the **project dashboard**, click on the **New Project** button
 
 ![Image](/images/yc-web/dashboard.png)
 
-It will open a slide to configurate the new project. For that, you need to add a name and select a plan
+It will open a slide to configurate the new project. For that, you need to add a name
 
 ![Image](/images/yc-web/dashboardCreateProject.png)
 
 If you already have a project model on format **.txt**, you can import the project by clicking in the **Import schema** button. That it will open an editor for you configurate your project. In this editor, you must add **c:** before the schema name so that it is created
 
-![Image](/images/yc-web/dashboardCreateProject3.png)
-
-After configurating the project and selecting the plan, click on the **Create project** button. You will be redirected to the **Schema Manager** tab of your project right after
-
 ![Image](/images/yc-web/dashboardCreateProject2.png)
+
+After configurating the project, click on the **Create project** button. You will be redirected to the **Schema Manager** tab of your project right after
+
+![Image](/images/yc-web/dashboardCreateProject3.png)
 
 ## 2. Delete Schema
 

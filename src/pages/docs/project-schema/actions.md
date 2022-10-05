@@ -38,15 +38,19 @@ If you want to see how it can be done in javascript, click on the download butto
 
 Go to **Data Manager** > **entity** (in this case, **livros**) and select the operation **Create**, and select the fields you want to insert direct through the sidebar
 
+{% callout type="warning" title="Be aware!" %}
+Make sure to select all the fields that are required for that entity
+{% /callout %}
+
 ![Image](/images/yc-web/insert1.png)
 
 Then, with all the fields selected, fill the fields with the values you want and click on the play button. In the case of our entity, we filled the fields with following format:
 
 ```
 "livros": {
-  "genero": "Romance",
-  "nome": "Memórias Póstumas de Brás Cubas",
-  "autor": "Machado de Assis"
+  "title": "Memórias Póstumas de Brás Cubas",
+  "author": "Machado de Assis",
+  "genre": "Romance"
 }
 ```
 
