@@ -2,6 +2,8 @@
 title: Using Exported Code
 ---
 
+## 1. Exporting Code
+
 First, click on the **Code exporter** button in the bottom right corner of the console. It will open a slide showing you the code of the whole operation
 
 ![Image](/images/yc-web/exportedCode1.png)
@@ -9,6 +11,8 @@ First, click on the **Code exporter** button in the bottom right corner of the c
 ![Image](/images/yc-web/exportedCode2.png)
 
 Next, you want to click on the **Copy to clipboard** button to copy the code to your clipboard, and then paste it into your code editor
+
+## 2. Using the Code
 
 ![Image](/images/yc-web/exportedCode3.png)
 

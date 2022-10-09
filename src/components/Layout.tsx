@@ -62,9 +62,9 @@ function Header({ navigation }: HeaderProps) {
           <Logomark className="block w-[33px] md:hidden" />
         </Link>
       </div>
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+      {/* <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         <Search />
-      </div>
+      </div> */}
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
         <Link
@@ -166,7 +166,7 @@ export function Layout({
     <>
       <Header navigation={navigation} />
 
-      <div className="dark:dark-scrollbar"></div>
+      <div className="dark:dark-scrollbar" />
 
       <div className="relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">

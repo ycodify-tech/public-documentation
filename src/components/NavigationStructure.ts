@@ -14,15 +14,11 @@ export const NavigationStructure = [
         title: 'Create an Account',
         href: '/docs/account-management/create-account',
       },
-      {
-        title: 'Create and Deleting a Schema',
-        href: '/docs/account-management/create-delete-schema',
-      },
-      {
-        title: 'Payment Methods',
-        href: '/docs/account-management/payment-methods',
-      },
       { title: 'Projects', href: '/docs/account-management/projects' },
+      {
+        title: 'My Account',
+        href: '/docs/account-management/myaccount',
+      },
     ],
   },
   {
@@ -32,8 +28,8 @@ export const NavigationStructure = [
       { title: 'Actions', href: '/docs/project-schema/actions' },
       { title: 'Associations', href: '/docs/project-schema/associations' },
       {
-        title: 'Authorization & Authentication',
-        href: '/docs/project-schema/authorization-authentication',
+        title: 'Users & Roles',
+        href: '/docs/project-schema/users-roles',
       },
       {
         title: 'Using Exported Code',
@@ -49,6 +45,7 @@ export const NavigationStructure = [
         href: '/docs/guides/consuming-services',
       },
       { title: 'YCL Language', href: '/docs/guides/ycl-language' },
+      { title: 'References', href: '/docs/guides/references' },
     ],
   },
 ]

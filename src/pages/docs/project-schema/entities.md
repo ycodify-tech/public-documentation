@@ -12,6 +12,8 @@ To do this, you need to go to the **Schema Manager** section of your project's c
 
 ![Image](/images/yc-web/createEntity1.png)
 
+## 2. Entity Attributes
+
 After that, you will be redirected to a form to create your entity. In this form, you need to add the name of the entity, the name of the attribute and it's type. For this example, we will create an entity called **book** with the attributes **title (String 128)**, **author (String 128)** and **genre (String 64)**
 
 ![Image](/images/yc-web/createEntity2.png)
