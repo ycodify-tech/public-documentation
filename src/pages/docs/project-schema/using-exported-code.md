@@ -16,4 +16,6 @@ Next, you want to click on the **Copy to clipboard** button to copy the code to 
 
 ![Image](/images/yc-web/exportedCode3.png)
 
-Now you can use the return of the operation in your code
+Now you can use the return of the operation in your code.
+
+[By clicking here](https://codepen.io/pen/PoexxYy) you can see an example using the READ operation!

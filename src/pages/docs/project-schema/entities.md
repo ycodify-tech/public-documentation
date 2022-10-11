@@ -8,7 +8,7 @@ For this section, we will use a schema called library
 
 ## 1. Creating an Entity
 
-To do this, you need to go to the **Schema Manager** section of your project's console and click on the **Create entity** button
+To do this, you need to go to the **Schema** section of your project's console and click on the **Create entity** button
 
 ![Image](/images/yc-web/createEntity1.png)
 
@@ -18,4 +18,4 @@ After that, you will be redirected to a form to create your entity. In this form
 
 ![Image](/images/yc-web/createEntity2.png)
 
-Finally, click on the **Create entity** button and you will be redirected back to the **Schema Manager** section of your project's console
+Finally, click on the **Create entity** button and you will be redirected back to the **Schema** section of your project's console

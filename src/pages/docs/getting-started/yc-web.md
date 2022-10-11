@@ -38,7 +38,7 @@ After configurate the project and selected the plan, click on the **Create proje
 
 ## 3. Create entities for your schema
 
-When concluding the project creation, you will be redirected to the **Schema Manager** tab. In **Entities** section, click on the **Create entity** to add a new entity to your schema
+When concluding the project creation, you will be redirected to the **Schema** tab. In **Database** section, click on the **Create entity** to add a new entity to your schema
 
 ![Image](/images/yc-web/createEntity1.png)
 

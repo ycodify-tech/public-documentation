@@ -18,7 +18,7 @@ If you already have a project model on format **.txt**, you can import the proje
 
 ![Image](/images/yc-web/dashboardCreateProject2.png)
 
-After configurating the project, click on the **Create project** button. You will be redirected to the **Schema Manager** tab of your project right after
+After configurating the project, click on the **Create project** button. You will be redirected to the **Schema** tab of your project right after
 
 ![Image](/images/yc-web/dashboardCreateProject3.png)
 

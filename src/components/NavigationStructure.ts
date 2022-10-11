@@ -26,6 +26,7 @@ export const NavigationStructure = [
     links: [
       { title: 'Entities', href: '/docs/project-schema/entities' },
       { title: 'Actions', href: '/docs/project-schema/actions' },
+      { title: 'Publish Schema', href: '/docs/project-schema/publish-schema' },
       { title: 'Associations', href: '/docs/project-schema/associations' },
       {
         title: 'Users & Roles',
