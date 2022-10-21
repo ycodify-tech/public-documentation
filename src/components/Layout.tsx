@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
-import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
@@ -11,6 +10,7 @@ import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 import { NavigationStructure as navigation } from './NavigationStructure'
+import { BetaTag } from './BetaTag'
 
 type HeaderProps = {
   navigation: {
@@ -57,9 +57,10 @@ function Header({ navigation }: HeaderProps) {
         <MobileNavigation navigation={navigation} />
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
-        <Link href="/" aria-label="Home page">
-          <Logo className="hidden h-9 w-auto md:block" />
-          <Logomark className="block w-[33px] md:hidden" />
+        <Link href="/" aria-label="Home page" className="flex gap-4">
+          <Logo className="hidden h-7 w-auto md:block" />
+          <Logomark className="block h-7 w-auto md:hidden" />
+          <BetaTag />
         </Link>
       </div>
       {/* <div className="-my-5 mr-6 sm:mr-8 md:mr-0">

@@ -28,6 +28,10 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
+      colors: {
+        yc: '#0cd664',
+        'yc-brighter': '#56f59b',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
