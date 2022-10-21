@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
-import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
@@ -58,8 +57,8 @@ function Header({ navigation }: HeaderProps) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <Logo className="hidden h-9 w-auto md:block" />
-          <Logomark className="block w-[33px] md:hidden" />
+          <Logo className="hidden h-7 w-auto md:block" />
+          <Logomark className="block h-7 w-auto md:hidden" />
         </Link>
       </div>
       {/* <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
