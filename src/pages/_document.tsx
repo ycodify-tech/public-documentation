@@ -1,10 +1,10 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
 const themeScript = `
-  let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  let mediaQuery = window.matchMedia('(prefers-color-scheme: light)')
 
   function updateTheme(savedTheme) {
-    let theme = 'system'
+    let theme = 'light'
     try {
       if (!savedTheme) {
         savedTheme = window.localStorage.theme
