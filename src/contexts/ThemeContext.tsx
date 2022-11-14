@@ -9,7 +9,6 @@ export const ThemeContext = createContext({} as ThemeContextProps)
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false)
 
-
   useEffect(() => {
     new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -20,6 +19,7 @@ export const ThemeProvider = ({ children }) => {
     }).observe(document.documentElement, {
       attributeFilter: ['data-theme'],
     })
+    console.log('isDark', isDark)
   }, [])
 
   return (
