@@ -19,7 +19,6 @@ export const ThemeProvider = ({ children }) => {
     }).observe(document.documentElement, {
       attributeFilter: ['data-theme'],
     })
-    console.log('isDark', isDark)
   }, [])
 
   return (

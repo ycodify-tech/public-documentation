@@ -46,7 +46,7 @@ export const NavigationStructure = [
         href: '/docs/guides/consuming-services',
       },
       { title: 'YCL Language', href: '/docs/guides/ycl-language' },
-      { title: 'References', href: '/docs/guides/references' },
+      // { title: 'References', href: '/docs/guides/references' },
     ],
   },
 ]

@@ -52,13 +52,17 @@ export function Hero() {
                 Develop your software faster.
               </p>
               <p className="mt-3 text-xl tracking-tight text-slate-600 dark:text-slate-400">
-                Reduce significantly the efforts of coding, testing, deployment
-                and evolution of a software. Deliver your software products in
-                up to 60% shorter timeframes, reducing the costs of software
-                production, operation and maintenance.
+                Know how the Ycodify platform works and learn how to develop
+                your software or application, significantly reducing the effort
+                of coding, testing, deployment and evolution of a software, with
+                execution up to 60% faster and reduction of production,
+                operation and maintenance costs.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="https://ycodify.com/register" variant="secondary">
+                <Button
+                  href="https://console.ycodify.com/register"
+                  variant="secondary"
+                >
                   Try out
                 </Button>
                 <Button
