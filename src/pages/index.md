@@ -5,7 +5,7 @@ pageTitle: Ycodify Docs
 
 {% hero /%}
 
-Here you will find a summary of the Ycode platform, references, purposes and guides.
+Here you will find a summary of the Ycodify platform, references, purposes and guides.
 
 ## Popular Topics
 
