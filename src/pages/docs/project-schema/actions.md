@@ -12,7 +12,7 @@ First you will need to publish the modifications made to the schema
 
 Go to **Data Api** > **entity** (in this case, **livros**) and select the operation **Read**. If no filter is specified, all the table data will be returned
 
-![Image](/images/yc-web/read.png)
+![Image](/images/yc-web/select.png)
 
 You can also see the data in the table format. To do this, click on table button in lower right corner of the console response
 
@@ -23,7 +23,7 @@ You can also see the data in the table format. To do this, click on table button
 
 To filter the results, you need to specify in the object the fields you want to filter and their values
 
-![Image](/images/yc-web/read6.png)
+![Image](/images/yc-web/Read6.png)
 
 > For fields of **STRING** or **TEXT** type, it is possible to use the **LIKE** operator to search for part of the text, you just need to add the **%** symbol before and after the text you want to search
 
@@ -42,7 +42,7 @@ Go to **Data Api** > **entity** (in this case, **livros**) and select the operat
 Make sure to select all the fields that are required for that entity
 {% /callout %}
 
-![Image](/images/yc-web/insert1.png)
+![Image](/images/yc-web/Insert1.png)
 
 Then, with all the fields selected, fill the fields with the values you want and click on the play button. In the case of our entity, we filled the fields with following format:
 
@@ -56,7 +56,7 @@ Then, with all the fields selected, fill the fields with the values you want and
 
 When perfoming the operation, the response will be at the right side of console
 
-![Image](/images/yc-web/insert2.png)
+![Image](/images/yc-web/Insert2.png)
 
 The return of the operation, in sucess case, it will be the created object, along with your primary key **id**
 
@@ -64,7 +64,7 @@ The return of the operation, in sucess case, it will be the created object, alon
 
 Go to **Data Api** > **entity** (in this case, **livros**) and select the operation **Update**. you will need to specify the field **id** of the register you want to update and the whole object,with the fields to be updated and the ones that won't be updated
 
-![Image](/images/yc-web/update1.png)
+![Image](/images/yc-web/Update1.png)
 
 The register with the specified **id** will be replaced by the new register
 
