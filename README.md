@@ -1,23 +1,38 @@
-# Sumário da Documentação da Plataforma Ycodify
+# Ycodify Docs
 
-Aqui você encontrará um sumário da documentação da plataforma Ycodify. A seguir, um Sumário dos documentos, suas referências, e suas finalidades.
+## Version
 
-### 1. [Quickstart - Criação de Conta e Criação de _Schema_ de Dados com Console CLI](https://github.com/ycodify-tech/console-cli/blob/master/Quickstart.md)
+- 1.0.0
 
-> Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso script [yc.sh](https://github.com/ycodify-tech/scripts/blob/master/yc.sh) para linhas de comando bashscript. Usando-o, você será capaz de criar uma conta em nosso sandbox e criar seu primeiro _schema_ de dados.
+## Getting Started
 
-### 2. [Quickstart - Consumindo Serviços de Backend para um _Schema_ de Dados](https://github.com/ycodify-tech/baas-api/blob/master/Quickstart.md)
+First, run the development server:
 
-> Com esse documeto você saberá como consumir os serviços de backend para um _schema_ de dados, criado e mantido por meio do que está apresentado em _1. Quickstart - Criação de Conta e Criação de \_Schema_ de Dados\_
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-### 3. Quickstart - Uso do Console WEB
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-> Esse documeto apresenta, por meio de exemplo, a forma de uso do nosso [Console WEB](https://api.ycodify.com/app/index.html). Sua vantagem, comparativamente ao _Console CLI_, é o ambiente gráfico que emprego da linguagem YCL, o que simplifica ainda mais seu processo de criação e manutenção de seu _schema_ de dados e o ambiente de execução de serviços para seu _schema_. Usando-o, você será capaz de criar uma conta, criar seu primeiro _schema_ de dados, manter e habilitar os serviços e suas configurações para _deployment_ de seu _schema_ de dados em nossa plataforma BaaS.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-### 4. [Quickstart - Uso da Linguagem YCL](https://github.com/ycodify-tech/languages/blob/master/Quickstart%20-%20YCL.md)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-> Esse documento apresenta a linguagem YCL e suas formas de uso. Esse uso implica a definição de _schemas_ de dados e configurações dos serviços de backend que operarão sobre o _schema_ de dados anteriormente definidos.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### 5. Linguagem YCL
+## Learn More
 
-> Esse documento apresenta mais detalhadamente a linguagem YCL. Use-o com o fim de compreender todo o potencial da linguagem YCL.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
