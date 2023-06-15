@@ -14,6 +14,7 @@ export const NavigationStructure = [
         title: 'Create an Account',
         href: '/docs/account-management/create-account',
       },
+      { title: 'Connecting Database', href: '/docs/project-schema/connecting-db' },
       { title: 'Projects', href: '/docs/account-management/projects' },
       {
         title: 'My Account',
@@ -24,6 +25,7 @@ export const NavigationStructure = [
   {
     title: 'Schema',
     links: [
+      
       { title: 'Entities', href: '/docs/project-schema/entities' },
       { title: 'Actions', href: '/docs/project-schema/actions' },
       { title: 'Publish Schema', href: '/docs/project-schema/publish-schema' },

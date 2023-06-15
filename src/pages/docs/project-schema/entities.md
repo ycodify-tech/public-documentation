@@ -10,12 +10,12 @@ For this section, we will use a schema called library
 
 To do this, you need to go to the **Schema** section of your project's console and click on the **Create entity** button
 
-![Image](/images/yc-web/createEntity1.png)
+![Image](/images/yc-web/entity1.png)
 
 ## 2. Entity Attributes
 
 After that, you will be redirected to a form to create your entity. In this form, you need to add the name of the entity, the name of the attribute and it's type. For this example, we will create an entity called **book** with the attributes **title (String 128)**, **author (String 128)** and **genre (String 64)**
 
-![Image](/images/yc-web/createEntity2.png)
+![Image](/images/yc-web/entity2.png)
 
 Finally, click on the **Create entity** button and you will be redirected back to the **Schema** section of your project's console

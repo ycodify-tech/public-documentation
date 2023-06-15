@@ -6,11 +6,12 @@ title: Projects
 
 In the **project dashboard**, click on the **New Project** button
 
-![Image](/images/yc-web/dashboard.png)
+![Image](/images/yc-web/create1.png)
 
-It will open a slide to configurate the new project. For that, you need to add a name
+It will open a slide to configurate the new project. For that, you need to add a name.
+And then, you need to put your database data: username, password, address, port and default DB name
 
-![Image](/images/yc-web/dashboardCreateProject.png)
+![Image](/images/yc-web/CreateProj.png)
 
 ### 1.1 Import existing project
 
@@ -20,7 +21,7 @@ If you already have a project model on format **.txt**, you can import the proje
 
 After configurating the project, click on the **Create project** button. You will be redirected to the **Schema** tab of your project right after
 
-![Image](/images/yc-web/dashboardCreateProject3.png)
+![Image](/images/yc-web/create3.png)
 
 ## 2. Delete Project
 
@@ -30,5 +31,5 @@ To delete a project, you need to go back to the dashboard and click on the gear 
 Remember that this action cannot be undone!
 {% /callout %}
 
-![Image](/images/yc-web/deleteSchema.png)
-![Image](/images/yc-web/deleteSchema2.png)
+![Image](/images/yc-web/delete1.png)
+![Image](/images/yc-web/delete2.png)
