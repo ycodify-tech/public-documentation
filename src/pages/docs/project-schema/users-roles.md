@@ -10,26 +10,25 @@ Here's how you can create users and roles for your project:
 
 ## 1. Creating the project
 
-Once you have created a project, you will be presented with a slide containing the project's **Admin username** and **Admin password**, as well as the **X-TenantAC**.
+First, you need to create a project.
 
-![Image](/images/yc-web/users-roles-1.png)
+![Image](/images/yc-web/userscreate.png)
 
-{% callout type="warning" title="Attention!" %}
-This is the only time you will be able to copy the _Admin password_. Make sure to save it somewhere safe.
-{% /callout %}
+Once you have created, follow the next step.
 
-After that's done, you can check the warning message and click **Continue**.
+## 2. Creating Roles
+At the dashboard home page, go to the **My organization** page, there you will find the users and roles tabs.
 
-![Image](/images/yc-web/users-roles-2.png)
+![Image](/images/yc-web/usersandroles1.png)
 
-## 2. Creating users
+Select the Roles tab, and then create a role.
 
-Once you're in your project's console page, you can navigate to **Schema** > **Users & Roles** and click **Authorization**.
+![Image](/images/yc-web/usersandroles3.png)
 
-![Image](/images/yc-web/users-roles-3.png)
+## 3. Creating users
 
-You will be presented with a slide asking for the project's **Admin password** to get access to the user management page.
+To create a new user, go to the Users tab, then click on the new user button. After that, fill up the fields and you are ready to go.
 
-![Image](/images/yc-web/users-roles-4.png)
+![Image](/images/yc-web/usersandroles2.png)
 
 ...
